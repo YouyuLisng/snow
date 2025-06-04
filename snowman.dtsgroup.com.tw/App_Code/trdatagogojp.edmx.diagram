@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82771e412d51438ca140eb2593fd39ac" Name="Diagram1" ZoomLevel="16">
+        <EntityTypeShape EntityType="trgModel.TRMGBOOK" Width="1.5" PointX="3" PointY="11.125" />
+        <EntityTypeShape EntityType="trgModel.TRMGHTL" Width="1.5" PointX="3" PointY="26.375" />
+        <EntityTypeShape EntityType="trgModel.TRMGITN" Width="1.5" PointX="3" PointY="17.25" />
+        <EntityTypeShape EntityType="trgModel.TRMGLOCL" Width="1.5" PointX="3" PointY="29.5" />
+        <EntityTypeShape EntityType="trgModel.TRMGRUP" Width="1.5" PointX="0.75" PointY="2.625" />
+        <EntityTypeShape EntityType="trgModel.TRMGVISA" Width="1.5" PointX="3" PointY="8" />
+        <AssociationConnector Association="trgModel.TRMGRUPTRMGBOOK" />
+        <AssociationConnector Association="trgModel.TRMGRUPTRMGHTL" />
+        <AssociationConnector Association="trgModel.TRMGRUPTRMGITN" />
+        <AssociationConnector Association="trgModel.TRMGRUPTRMGLOCL" />
+        <AssociationConnector Association="trgModel.TRMGRUPTRMGVISA" />
+        <EntityTypeShape EntityType="trgModel.TRGRUP" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.TRDGCLN" Width="1.5" PointX="8" PointY="145.5" />
+        <EntityTypeShape EntityType="trgModel.TRDGHTL" Width="1.5" PointX="8" PointY="104.125" />
+        <EntityTypeShape EntityType="trgModel.TRDGINC" Width="1.5" PointX="8" PointY="165.625" />
+        <EntityTypeShape EntityType="trgModel.TRDGINS" Width="1.5" PointX="8" PointY="156.25" />
+        <EntityTypeShape EntityType="trgModel.TRDGITN" Width="1.5" PointX="8" PointY="138.5" />
+        <EntityTypeShape EntityType="trgModel.TRDGPAX" Width="1.5" PointX="8" PointY="84.875" />
+        <EntityTypeShape EntityType="trgModel.TRDGRES" Width="1.5" PointX="8" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.TRDGSC" Width="1.5" PointX="8" PointY="149.875" />
+        <EntityTypeShape EntityType="trgModel.TRDGTRF" Width="1.5" PointX="8" PointY="130.375" />
+        <EntityTypeShape EntityType="trgModel.TRDGVS" Width="1.5" PointX="8" PointY="111.375" />
+        <EntityTypeShape EntityType="trgModel.TRDPCRO" Width="1.5" PointX="8" PointY="161.5" />
+        <EntityTypeShape EntityType="trgModel.TRDPRC" Width="1.5" PointX="8" PointY="175.25" />
+        <EntityTypeShape EntityType="trgModel.TRGBOOK" Width="1.5" PointX="8" PointY="179.625" />
+        <EntityTypeShape EntityType="trgModel.TRGHTL" Width="1.5" PointX="8" PointY="126.5" />
+        <EntityTypeShape EntityType="trgModel.TRGITN" Width="1.5" PointX="8" PointY="117.25" />
+        <EntityTypeShape EntityType="trgModel.TRGLOCL" Width="1.5" PointX="8" PointY="171.875" />
+        <EntityTypeShape EntityType="trgModel.TRGPAX" Width="1.5" PointX="8" PointY="90.875" />
+        <EntityTypeShape EntityType="trgModel.TRGVISA" Width="1.5" PointX="8" PointY="142.5" />
+        <EntityTypeShape EntityType="trgModel.TRREC" Width="1.5" PointX="7.75" PointY="33.25" />
+        <EntityTypeShape EntityType="trgModel.TRRECP" Width="1.5" PointX="10" PointY="30" />
+        <EntityTypeShape EntityType="trgModel.TRTCOST" Width="1.5" PointX="12.25" PointY="58" />
+        <EntityTypeShape EntityType="trgModel.TRTORDS" Width="1.5" PointX="10" PointY="7.875" />
+        <EntityTypeShape EntityType="trgModel.TRTRANS" Width="1.5" PointX="10" PointY="39.625" />
+        <EntityTypeShape EntityType="trgModel.TRTREC" Width="1.5" PointX="10" PointY="11.25" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGCLN" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGHTL" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGINC" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGINS" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGITN" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGPAX" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGRES" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGSC" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGTRF" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDGVS" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDPCRO" />
+        <AssociationConnector Association="trgModel.TRGRUPTRDPRC" />
+        <AssociationConnector Association="trgModel.TRGRUPTRGBOOK" />
+        <AssociationConnector Association="trgModel.TRGRUPTRGHTL" />
+        <AssociationConnector Association="trgModel.TRGRUPTRGITN" />
+        <AssociationConnector Association="trgModel.TRGRUPTRGLOCL" />
+        <AssociationConnector Association="trgModel.TRGRUPTRGPAX" />
+        <AssociationConnector Association="trgModel.TRGRUPTRGVISA" />
+        <AssociationConnector Association="trgModel.TRRECTRRECP" />
+        <AssociationConnector Association="trgModel.TRRECTRTORDS" />
+        <AssociationConnector Association="trgModel.TRRECTRTRANS" />
+        <AssociationConnector Association="trgModel.TRRECTRTREC" />
+        <AssociationConnector Association="trgModel.TRTRANSTRTCOST" />
+        <EntityTypeShape EntityType="trgModel.TRSUBD" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.TRWORD" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.SE_TNAREA_GO" Width="1.5" PointX="14.375" PointY="5.75" />
+        <EntityTypeShape EntityType="trgModel.SE_TNGRUP_GO" Width="1.5" PointX="14.375" PointY="8.75" />
+        <EntityTypeShape EntityType="trgModel.SE_TNSUBD_GO" Width="1.5" PointX="14.375" PointY="12.75" />
+        <EntityTypeShape EntityType="trgModel.SEL_TNGRUP_GO" Width="1.5" PointX="14.375" PointY="15.75" />
+        <EntityTypeShape EntityType="trgModel.TRAIRP" Width="1.5" PointX="16.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.TRAIRP_DC" Width="1.5" PointX="16.375" PointY="5.75" />
+        <EntityTypeShape EntityType="trgModel.TRCAREA" Width="1.5" PointX="16.375" PointY="10.75" />
+        <EntityTypeShape EntityType="trgModel.TRCARR" Width="1.5" PointX="16.375" PointY="13.75" />
+        <EntityTypeShape EntityType="trgModel.TRPORT" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.TRPORTDEP_TW" Width="1.5" PointX="18.375" PointY="4.75" />
+        <EntityTypeShape EntityType="trgModel.TRCITY" Width="1.5" PointX="18.375" PointY="8.75" />
+        <EntityTypeShape EntityType="trgModel.TRGSALEDTL" Width="1.5" PointX="18.375" PointY="15.75" />
+        <EntityTypeShape EntityType="trgModel.TRGOPITEM" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.TRMPGITN" Width="1.5" PointX="20.375" PointY="4.75" />
+        <EntityTypeShape EntityType="trgModel.TRGRUPD1" Width="1.5" PointX="20.375" PointY="13.75" />
+        <EntityTypeShape EntityType="trgModel.TRGRUPSUBD" Width="1.5" PointX="16.375" PointY="21.75" />
+        <EntityTypeShape EntityType="trgModel.TRACNTH" Width="1.5" PointX="22.375" PointY="14.75" />
+        <EntityTypeShape EntityType="trgModel.TRAORD" Width="1.5" PointX="12.375" PointY="23.75" />
+        <EntityTypeShape EntityType="trgModel.TRCREC" Width="1.5" PointX="24.375" PointY="12.75" />
+        <EntityTypeShape EntityType="trgModel.TRDBATV" Width="1.5" PointX="24.375" PointY="23.75" />
+        <EntityTypeShape EntityType="trgModel.TRENTRY" Width="1.5" PointX="26.375" PointY="12.75" />
+        <EntityTypeShape EntityType="trgModel.TRGPAXLOG" Width="1.5" PointX="26.375" PointY="21.75" />
+        <EntityTypeShape EntityType="trgModel.TRGRUPFEAT" Width="1.5" PointX="26.375" PointY="25.75" />
+        <EntityTypeShape EntityType="trgModel.TRGSALE" Width="1.5" PointX="27.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.TRKCREC" Width="1.5" PointX="22.375" PointY="27.75" />
+        <EntityTypeShape EntityType="trgModel.TRKORD" Width="1.5" PointX="28.375" PointY="11.75" />
+        <EntityTypeShape EntityType="trgModel.TRPAX" Width="1.5" PointX="28.375" PointY="16.75" />
+        <EntityTypeShape EntityType="trgModel.TRPAXLOG" Width="1.5" PointX="29.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.TRRCVD" Width="1.5" PointX="30.375" PointY="5.75" />
+        <EntityTypeShape EntityType="trgModel.TRRECLOG" Width="1.5" PointX="30.375" PointY="14.75" />
+        <EntityTypeShape EntityType="trgModel.TRTHST" Width="1.5" PointX="30.375" PointY="19.75" />
+        <EntityTypeShape EntityType="trgModel.TRTORD" Width="1.5" PointX="22.375" PointY="1.375" />
+        <EntityTypeShape EntityType="trgModel.TRTORDD" Width="1.5" PointX="24.625" PointY="3.5" />
+        <EntityTypeShape EntityType="trgModel.TRTRANSD2" Width="1.5" PointX="30.375" PointY="23.75" />
+        <AssociationConnector Association="trgModel.TRTORDTRTORDD" />
+        <EntityTypeShape EntityType="trgModel.TRPGSUBD" Width="1.5" PointX="31.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trgModel.TRDBATD" Width="1.5" PointX="24.375" PointY="30.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

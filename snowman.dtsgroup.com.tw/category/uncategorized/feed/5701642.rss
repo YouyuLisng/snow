@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>未分類 アーカイブ - Snowman club</title>
+	<atom:link href="https://snowman-club.com/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>https://snowman-club.com/category/uncategorized/</link>
+	<description>北海道中文滑雪學校</description>
+	<lastBuildDate>Sat, 04 Dec 2021 12:46:40 +0000</lastBuildDate>
+	<language>ja</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>test</title>
+		<link>https://snowman-club.com/test/</link>
+					<comments>https://snowman-club.com/test/#respond</comments>
+		
+		<dc:creator><![CDATA[snowman-club]]></dc:creator>
+		<pubDate>Sat, 04 Dec 2021 12:46:38 +0000</pubDate>
+				<category><![CDATA[未分類]]></category>
+		<guid isPermaLink="false">https://snowman-club.com/?p=8</guid>
+
+					<description><![CDATA[<p>test</p>
+<p>投稿 <a rel="nofollow" href="https://snowman-club.com/test/">test</a> は <a rel="nofollow" href="https://snowman-club.com">Snowman club</a> に最初に表示されました。</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>test</p>
+<p>投稿 <a rel="nofollow" href="https://snowman-club.com/test/">test</a> は <a rel="nofollow" href="https://snowman-club.com">Snowman club</a> に最初に表示されました。</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://snowman-club.com/test/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

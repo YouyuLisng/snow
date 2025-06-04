@@ -1,0 +1,1493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BPDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblDicCity">
+          <Key>
+            <PropertyRef Name="DicCityID" />
+          </Key>
+          <Property Name="DicCityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DicCountryCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DicCityCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DicCityNm" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DicCityTC" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DicCitySort" Type="int" Nullable="false" />
+          <Property Name="DicCityADate" Type="datetime" Nullable="false" />
+          <Property Name="DicCityEnable" Type="bit" Nullable="false" />
+          <Property Name="DicCityDel" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDicRegion">
+          <Key>
+            <PropertyRef Name="DicRegionID" />
+          </Key>
+          <Property Name="DicRegionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DicCountryCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DicAreaCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DicRegionCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DicRegionNm" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DicRegionENm" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DicRegionSort" Type="int" Nullable="false" />
+          <Property Name="DicRegionADate" Type="datetime" Nullable="false" />
+          <Property Name="DicRegionEnable" Type="bit" Nullable="false" />
+          <Property Name="DicRegionDel" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDIYHotelOItem">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="RoomProTypeID" />
+            <PropertyRef Name="HotelRoomID" />
+            <PropertyRef Name="HotelSchSD" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="RoomProTypeID" Type="int" Nullable="false" />
+          <Property Name="HotelRoomID" Type="int" Nullable="false" />
+          <Property Name="HotelSchSD" Type="date" Nullable="false" />
+          <Property Name="OrderRoomPrice" Type="int" Nullable="false" />
+          <Property Name="OrderRoomQty" Type="int" Nullable="false" />
+          <Property Name="OrderRoomPriceC" Type="int" Nullable="false" />
+          <Property Name="OrderRoomQtyC" Type="int" Nullable="false" />
+          <Property Name="CheckInTime" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="OrderEnable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDIYHotelOU">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="RoomGroup" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDIYOrder">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="OrderAD" Type="datetime" Nullable="false" />
+          <Property Name="OrderStatus" Type="int" Nullable="false" />
+          <Property Name="OrderUD" Type="datetime" Nullable="false" />
+          <Property Name="LoginID" Type="int" />
+          <Property Name="OrderPrice" Type="int" Nullable="false" />
+          <Property Name="PayID" Type="nvarchar" MaxLength="50" />
+          <Property Name="PayTime" Type="datetime" />
+          <Property Name="PayPrice" Type="int" />
+          <Property Name="PayType" Type="int" Nullable="false" />
+          <Property Name="PayStatus" Type="int" Nullable="false" />
+          <Property Name="OrderNote" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OrderNoteSales" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblDIYUser">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CFName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="CLName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="FName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Sex" Type="bit" Nullable="false" />
+          <Property Name="Birthday" Type="date" />
+        </EntityType>
+        <EntityType Name="tblDIYUserExt">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="TelH" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelM" Type="nvarchar" MaxLength="50" />
+          <Property Name="Counties" Type="nvarchar" MaxLength="50" />
+          <Property Name="Townships" Type="nvarchar" MaxLength="50" />
+          <Property Name="Addr" Type="nvarchar" MaxLength="512" />
+          <Property Name="EmailEnable" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblHotel1">
+          <Key>
+            <PropertyRef Name="HotelID" />
+          </Key>
+          <Property Name="HotelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HiLiteID" Type="int" />
+          <Property Name="LoginID" Type="int" />
+          <Property Name="ProviderID" Type="int" />
+          <Property Name="HotelCoun" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelCity" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelLocate" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRegion" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelNm" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelENm" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelSNm" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelCat" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelClass" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelURL" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoom" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelDist" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelAddr" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelZip" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelCDist" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelCAddr" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelTelD" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelTelF" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelLoc" Type="ntext" Nullable="false" />
+          <Property Name="HotelDetail" Type="ntext" Nullable="false" />
+          <Property Name="HotelFacility" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelFunction" Type="int" Nullable="false" />
+          <Property Name="HotelDate" Type="datetime" Nullable="false" />
+          <Property Name="HotelEnable" Type="bit" Nullable="false" />
+          <Property Name="HotelDel" Type="bit" Nullable="false" />
+          <Property Name="DicCityID" Type="int" Nullable="false" />
+          <Property Name="DicRegionID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblHotelImage">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="512" Nullable="false" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+          <Property Name="HotelID" Type="int" />
+          <Property Name="HotelRoomID" Type="int" />
+          <Property Name="ImageEnable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblHotelRoom1">
+          <Key>
+            <PropertyRef Name="HotelRoomID" />
+          </Key>
+          <Property Name="HotelRoomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HiLiteID" Type="int" Nullable="false" />
+          <Property Name="LoginID" Type="int" Nullable="false" />
+          <Property Name="HotelID" Type="int" Nullable="false" />
+          <Property Name="RoomTypeID" Type="int" Nullable="false" />
+          <Property Name="HotelRoomNm" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoomNum" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoomBed" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoomArea" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoomAPPL" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoomFloor" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoomBath" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoomWin" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoomFac" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="HotelRoomPPL" Type="int" Nullable="false" />
+          <Property Name="HotelRoomPrice" Type="int" Nullable="false" />
+          <Property Name="HotelRoomSale" Type="int" Nullable="false" />
+          <Property Name="HotelRoomNote" Type="ntext" Nullable="false" />
+          <Property Name="HotelRoomNote1" Type="ntext" Nullable="false" />
+          <Property Name="HotelRoomAD" Type="datetime" Nullable="false" />
+          <Property Name="HotelRoomUD" Type="datetime" Nullable="false" />
+          <Property Name="HotelRoomDef" Type="bit" Nullable="false" />
+          <Property Name="HotelRoomEnable" Type="bit" Nullable="false" />
+          <Property Name="HotelRoomDel" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblHotelRoomPro1">
+          <Key>
+            <PropertyRef Name="RoomProTypeID" />
+            <PropertyRef Name="HotelRoomID" />
+            <PropertyRef Name="HotelSchSD" />
+          </Key>
+          <Property Name="RoomProTypeID" Type="int" Nullable="false" />
+          <Property Name="HotelRoomID" Type="int" Nullable="false" />
+          <Property Name="HotelSchSD" Type="date" Nullable="false" />
+          <Property Name="HotelProCost" Type="int" Nullable="false" />
+          <Property Name="HotelProSale" Type="int" Nullable="false" />
+          <Property Name="HotelProPlus" Type="int" Nullable="false" />
+          <Property Name="HotelProPlusP" Type="int" Nullable="false" />
+          <Property Name="HotelProAD" Type="datetime" Nullable="false" />
+          <Property Name="HotelProUD" Type="datetime" Nullable="false" />
+          <Property Name="HotelProEnable" Type="bit" Nullable="false" />
+          <Property Name="LoginID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblHotelRoomType">
+          <Key>
+            <PropertyRef Name="RoomTypeID" />
+          </Key>
+          <Property Name="RoomTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomName" Type="nvarchar" MaxLength="256" />
+          <Property Name="RoomCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblHotelRPType">
+          <Key>
+            <PropertyRef Name="RoomProTypeID" />
+          </Key>
+          <Property Name="RoomProTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomProName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="RoomProNote" Type="ntext" Nullable="false" />
+          <Property Name="RoomProEnable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblHotelSch1">
+          <Key>
+            <PropertyRef Name="HotelRoomID" />
+            <PropertyRef Name="HotelSchSD" />
+          </Key>
+          <Property Name="HotelRoomID" Type="int" Nullable="false" />
+          <Property Name="HotelSchSD" Type="date" Nullable="false" />
+          <Property Name="LoginID" Type="int" Nullable="false" />
+          <Property Name="HotelSchQty" Type="int" Nullable="false" />
+          <Property Name="HotelSchAD" Type="datetime" Nullable="false" />
+          <Property Name="HotelSchUD" Type="datetime" Nullable="false" />
+          <Property Name="HotelSchEnable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblLogin">
+          <Key>
+            <PropertyRef Name="LoginID" />
+          </Key>
+          <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HiLiteID" Type="int" Nullable="false" />
+          <Property Name="LoginCode" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginCNm" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginNm" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginSex" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LoginPWD" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginEmail" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginURL" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginIP" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginTelD" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginTelM" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginYAHOO" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginMSN" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginMSN1" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginSKYPE" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginPP" Type="int" Nullable="false" />
+          <Property Name="LoginBD" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginAddr" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginCP" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginCT" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginOD" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginLD" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginRole" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="LoginADate" Type="datetime" Nullable="false" />
+          <Property Name="LoginEnable" Type="bit" Nullable="false" />
+          <Property Name="LoginDel" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMailGroup">
+          <Key>
+            <PropertyRef Name="MailGroupID" />
+          </Key>
+          <Property Name="MailGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MailGroupName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMailGroupItem">
+          <Key>
+            <PropertyRef Name="MailGroupID" />
+            <PropertyRef Name="LoginID" />
+          </Key>
+          <Property Name="MailGroupID" Type="int" Nullable="false" />
+          <Property Name="LoginID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tblDIYHotelOItem_tblDIYHotelO">
+          <End Role="tblDIYOrder" Type="Self.tblDIYOrder" Multiplicity="1" />
+          <End Role="tblDIYHotelOItem" Type="Self.tblDIYHotelOItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYOrder">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="tblDIYHotelOItem">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYHotelOItem_tblHotelRoomPro1">
+          <End Role="tblHotelRoomPro1" Type="Self.tblHotelRoomPro1" Multiplicity="1" />
+          <End Role="tblDIYHotelOItem" Type="Self.tblDIYHotelOItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRoomPro1">
+              <PropertyRef Name="RoomProTypeID" />
+              <PropertyRef Name="HotelRoomID" />
+              <PropertyRef Name="HotelSchSD" />
+            </Principal>
+            <Dependent Role="tblDIYHotelOItem">
+              <PropertyRef Name="RoomProTypeID" />
+              <PropertyRef Name="HotelRoomID" />
+              <PropertyRef Name="HotelSchSD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYHotelOU_tblDIYHotelOU">
+          <End Role="tblDIYOrder" Type="Self.tblDIYOrder" Multiplicity="1" />
+          <End Role="tblDIYHotelOU" Type="Self.tblDIYHotelOU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYOrder">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="tblDIYHotelOU">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYHotelOU_tblDIYUser">
+          <End Role="tblDIYUser" Type="Self.tblDIYUser" Multiplicity="1" />
+          <End Role="tblDIYHotelOU" Type="Self.tblDIYHotelOU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="tblDIYHotelOU">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYOrder_tblDIYUser">
+          <End Role="tblDIYUser" Type="Self.tblDIYUser" Multiplicity="1" />
+          <End Role="tblDIYOrder" Type="Self.tblDIYOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="tblDIYOrder">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYOrder_tblLogin">
+          <End Role="tblLogin" Type="Self.tblLogin" Multiplicity="0..1" />
+          <End Role="tblDIYOrder" Type="Self.tblDIYOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLogin">
+              <PropertyRef Name="LoginID" />
+            </Principal>
+            <Dependent Role="tblDIYOrder">
+              <PropertyRef Name="LoginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYUserExt_tblDIYUser">
+          <End Role="tblDIYUser" Type="Self.tblDIYUser" Multiplicity="1" />
+          <End Role="tblDIYUserExt" Type="Self.tblDIYUserExt" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="tblDIYUserExt">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotel1_tblDicCity">
+          <End Role="tblDicCity" Type="Self.tblDicCity" Multiplicity="1" />
+          <End Role="tblHotel1" Type="Self.tblHotel1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDicCity">
+              <PropertyRef Name="DicCityID" />
+            </Principal>
+            <Dependent Role="tblHotel1">
+              <PropertyRef Name="DicCityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotel1_tblDicRegion">
+          <End Role="tblDicRegion" Type="Self.tblDicRegion" Multiplicity="1" />
+          <End Role="tblHotel1" Type="Self.tblHotel1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDicRegion">
+              <PropertyRef Name="DicRegionID" />
+            </Principal>
+            <Dependent Role="tblHotel1">
+              <PropertyRef Name="DicRegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelImage_tblHotel1">
+          <End Role="tblHotel1" Type="Self.tblHotel1" Multiplicity="0..1" />
+          <End Role="tblHotelImage" Type="Self.tblHotelImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotel1">
+              <PropertyRef Name="HotelID" />
+            </Principal>
+            <Dependent Role="tblHotelImage">
+              <PropertyRef Name="HotelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelImage_tblHotelRoom1">
+          <End Role="tblHotelRoom1" Type="Self.tblHotelRoom1" Multiplicity="0..1" />
+          <End Role="tblHotelImage" Type="Self.tblHotelImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRoom1">
+              <PropertyRef Name="HotelRoomID" />
+            </Principal>
+            <Dependent Role="tblHotelImage">
+              <PropertyRef Name="HotelRoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelRoom1_tblHotel1">
+          <End Role="tblHotel1" Type="Self.tblHotel1" Multiplicity="1" />
+          <End Role="tblHotelRoom1" Type="Self.tblHotelRoom1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotel1">
+              <PropertyRef Name="HotelID" />
+            </Principal>
+            <Dependent Role="tblHotelRoom1">
+              <PropertyRef Name="HotelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelRoom1_tblHotelRoomType">
+          <End Role="tblHotelRoomType" Type="Self.tblHotelRoomType" Multiplicity="1" />
+          <End Role="tblHotelRoom1" Type="Self.tblHotelRoom1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRoomType">
+              <PropertyRef Name="RoomTypeID" />
+            </Principal>
+            <Dependent Role="tblHotelRoom1">
+              <PropertyRef Name="RoomTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelRoomPro1_tblHotelRPType">
+          <End Role="tblHotelRPType" Type="Self.tblHotelRPType" Multiplicity="1" />
+          <End Role="tblHotelRoomPro1" Type="Self.tblHotelRoomPro1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRPType">
+              <PropertyRef Name="RoomProTypeID" />
+            </Principal>
+            <Dependent Role="tblHotelRoomPro1">
+              <PropertyRef Name="RoomProTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelRoomPro1_tblHotelSch1">
+          <End Role="tblHotelSch1" Type="Self.tblHotelSch1" Multiplicity="1" />
+          <End Role="tblHotelRoomPro1" Type="Self.tblHotelRoomPro1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelSch1">
+              <PropertyRef Name="HotelRoomID" />
+              <PropertyRef Name="HotelSchSD" />
+            </Principal>
+            <Dependent Role="tblHotelRoomPro1">
+              <PropertyRef Name="HotelRoomID" />
+              <PropertyRef Name="HotelSchSD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelSch1_tblHotelRoom1">
+          <End Role="tblHotelRoom1" Type="Self.tblHotelRoom1" Multiplicity="1" />
+          <End Role="tblHotelSch1" Type="Self.tblHotelSch1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRoom1">
+              <PropertyRef Name="HotelRoomID" />
+            </Principal>
+            <Dependent Role="tblHotelSch1">
+              <PropertyRef Name="HotelRoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMailGroupItem_tblLogin">
+          <End Role="tblLogin" Type="Self.tblLogin" Multiplicity="1" />
+          <End Role="tblMailGroupItem" Type="Self.tblMailGroupItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLogin">
+              <PropertyRef Name="LoginID" />
+            </Principal>
+            <Dependent Role="tblMailGroupItem">
+              <PropertyRef Name="LoginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMailGroupItem_tblMailGroup">
+          <End Role="tblMailGroup" Type="Self.tblMailGroup" Multiplicity="1" />
+          <End Role="tblMailGroupItem" Type="Self.tblMailGroupItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMailGroup">
+              <PropertyRef Name="MailGroupID" />
+            </Principal>
+            <Dependent Role="tblMailGroupItem">
+              <PropertyRef Name="MailGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BPDataModelStoreContainer">
+          <EntitySet Name="tblDicCity" EntityType="Self.tblDicCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDicRegion" EntityType="Self.tblDicRegion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDIYHotelOItem" EntityType="Self.tblDIYHotelOItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDIYHotelOU" EntityType="Self.tblDIYHotelOU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDIYOrder" EntityType="Self.tblDIYOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDIYUser" EntityType="Self.tblDIYUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDIYUserExt" EntityType="Self.tblDIYUserExt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHotel1" EntityType="Self.tblHotel1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHotelImage" EntityType="Self.tblHotelImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHotelRoom1" EntityType="Self.tblHotelRoom1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHotelRoomPro1" EntityType="Self.tblHotelRoomPro1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHotelRoomType" EntityType="Self.tblHotelRoomType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHotelRPType" EntityType="Self.tblHotelRPType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHotelSch1" EntityType="Self.tblHotelSch1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLogin" EntityType="Self.tblLogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMailGroup" EntityType="Self.tblMailGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMailGroupItem" EntityType="Self.tblMailGroupItem" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblDIYHotelOItem_tblDIYHotelO" Association="Self.FK_tblDIYHotelOItem_tblDIYHotelO">
+            <End Role="tblDIYOrder" EntitySet="tblDIYOrder" />
+            <End Role="tblDIYHotelOItem" EntitySet="tblDIYHotelOItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYHotelOItem_tblHotelRoomPro1" Association="Self.FK_tblDIYHotelOItem_tblHotelRoomPro1">
+            <End Role="tblHotelRoomPro1" EntitySet="tblHotelRoomPro1" />
+            <End Role="tblDIYHotelOItem" EntitySet="tblDIYHotelOItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYHotelOU_tblDIYHotelOU" Association="Self.FK_tblDIYHotelOU_tblDIYHotelOU">
+            <End Role="tblDIYOrder" EntitySet="tblDIYOrder" />
+            <End Role="tblDIYHotelOU" EntitySet="tblDIYHotelOU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYHotelOU_tblDIYUser" Association="Self.FK_tblDIYHotelOU_tblDIYUser">
+            <End Role="tblDIYUser" EntitySet="tblDIYUser" />
+            <End Role="tblDIYHotelOU" EntitySet="tblDIYHotelOU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYOrder_tblDIYUser" Association="Self.FK_tblDIYOrder_tblDIYUser">
+            <End Role="tblDIYUser" EntitySet="tblDIYUser" />
+            <End Role="tblDIYOrder" EntitySet="tblDIYOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYOrder_tblLogin" Association="Self.FK_tblDIYOrder_tblLogin">
+            <End Role="tblLogin" EntitySet="tblLogin" />
+            <End Role="tblDIYOrder" EntitySet="tblDIYOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYUserExt_tblDIYUser" Association="Self.FK_tblDIYUserExt_tblDIYUser">
+            <End Role="tblDIYUser" EntitySet="tblDIYUser" />
+            <End Role="tblDIYUserExt" EntitySet="tblDIYUserExt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotel1_tblDicCity" Association="Self.FK_tblHotel1_tblDicCity">
+            <End Role="tblDicCity" EntitySet="tblDicCity" />
+            <End Role="tblHotel1" EntitySet="tblHotel1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotel1_tblDicRegion" Association="Self.FK_tblHotel1_tblDicRegion">
+            <End Role="tblDicRegion" EntitySet="tblDicRegion" />
+            <End Role="tblHotel1" EntitySet="tblHotel1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelImage_tblHotel1" Association="Self.FK_tblHotelImage_tblHotel1">
+            <End Role="tblHotel1" EntitySet="tblHotel1" />
+            <End Role="tblHotelImage" EntitySet="tblHotelImage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelImage_tblHotelRoom1" Association="Self.FK_tblHotelImage_tblHotelRoom1">
+            <End Role="tblHotelRoom1" EntitySet="tblHotelRoom1" />
+            <End Role="tblHotelImage" EntitySet="tblHotelImage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelRoom1_tblHotel1" Association="Self.FK_tblHotelRoom1_tblHotel1">
+            <End Role="tblHotel1" EntitySet="tblHotel1" />
+            <End Role="tblHotelRoom1" EntitySet="tblHotelRoom1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelRoom1_tblHotelRoomType" Association="Self.FK_tblHotelRoom1_tblHotelRoomType">
+            <End Role="tblHotelRoomType" EntitySet="tblHotelRoomType" />
+            <End Role="tblHotelRoom1" EntitySet="tblHotelRoom1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelRoomPro1_tblHotelRPType" Association="Self.FK_tblHotelRoomPro1_tblHotelRPType">
+            <End Role="tblHotelRPType" EntitySet="tblHotelRPType" />
+            <End Role="tblHotelRoomPro1" EntitySet="tblHotelRoomPro1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelRoomPro1_tblHotelSch1" Association="Self.FK_tblHotelRoomPro1_tblHotelSch1">
+            <End Role="tblHotelSch1" EntitySet="tblHotelSch1" />
+            <End Role="tblHotelRoomPro1" EntitySet="tblHotelRoomPro1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelSch1_tblHotelRoom1" Association="Self.FK_tblHotelSch1_tblHotelRoom1">
+            <End Role="tblHotelRoom1" EntitySet="tblHotelRoom1" />
+            <End Role="tblHotelSch1" EntitySet="tblHotelSch1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMailGroupItem_tblLogin" Association="Self.FK_tblMailGroupItem_tblLogin">
+            <End Role="tblLogin" EntitySet="tblLogin" />
+            <End Role="tblMailGroupItem" EntitySet="tblMailGroupItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMailGroupItem_tblMailGroup" Association="Self.FK_tblMailGroupItem_tblMailGroup">
+            <End Role="tblMailGroup" EntitySet="tblMailGroup" />
+            <End Role="tblMailGroupItem" EntitySet="tblMailGroupItem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BPDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblDicCity1">
+          <Key>
+            <PropertyRef Name="DicCityID" />
+          </Key>
+          <Property Name="DicCityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DicCountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DicCityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DicCityNm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DicCityTC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DicCitySort" Type="Int32" Nullable="false" />
+          <Property Name="DicCityADate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DicCityEnable" Type="Boolean" Nullable="false" />
+          <Property Name="DicCityDel" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblHotel1" Relationship="Self.FK_tblHotel1_tblDicCity" FromRole="tblDicCity" ToRole="tblHotel1" />
+        </EntityType>
+        <EntityType Name="tblDicRegion1">
+          <Key>
+            <PropertyRef Name="DicRegionID" />
+          </Key>
+          <Property Name="DicRegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DicCountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DicAreaCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DicRegionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DicRegionNm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DicRegionENm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DicRegionSort" Type="Int32" Nullable="false" />
+          <Property Name="DicRegionADate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DicRegionEnable" Type="Boolean" Nullable="false" />
+          <Property Name="DicRegionDel" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblHotel1" Relationship="Self.FK_tblHotel1_tblDicRegion" FromRole="tblDicRegion" ToRole="tblHotel1" />
+        </EntityType>
+        <EntityType Name="tblHotel1">
+          <Key>
+            <PropertyRef Name="HotelID" />
+          </Key>
+          <Property Name="HotelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HiLiteID" Type="Int32" />
+          <Property Name="LoginID" Type="Int32" />
+          <Property Name="ProviderID" Type="Int32" />
+          <Property Name="HotelCoun" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelCity" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelLocate" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelRegion" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelNm" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelENm" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelSNm" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelCat" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelClass" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelURL" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelRoom" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelDist" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelAddr" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelZip" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelCDist" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelCAddr" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelTelD" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelTelF" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelLoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelFacility" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HotelFunction" Type="Int32" Nullable="false" />
+          <Property Name="HotelDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HotelEnable" Type="Boolean" Nullable="false" />
+          <Property Name="HotelDel" Type="Boolean" Nullable="false" />
+          <Property Name="DicCityID" Type="Int32" Nullable="false" />
+          <Property Name="DicRegionID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblDicCity" Relationship="Self.FK_tblHotel1_tblDicCity" FromRole="tblHotel1" ToRole="tblDicCity" />
+          <NavigationProperty Name="tblDicRegion" Relationship="Self.FK_tblHotel1_tblDicRegion" FromRole="tblHotel1" ToRole="tblDicRegion" />
+          <NavigationProperty Name="tblHotelImage" Relationship="Self.FK_tblHotelImage_tblHotel1" FromRole="tblHotel1" ToRole="tblHotelImage" />
+          <NavigationProperty Name="tblHotelRoom1" Relationship="BPDataModel.FK_tblHotelRoom1_tblHotel1" FromRole="tblHotel1" ToRole="tblHotelRoom1" />
+        </EntityType>
+        <EntityType Name="tblHotelImage">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <Property Name="HotelID" Type="Int32" />
+          <Property Name="HotelRoomID" Type="Int32" />
+          <Property Name="ImageEnable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblHotel1" Relationship="Self.FK_tblHotelImage_tblHotel1" FromRole="tblHotelImage" ToRole="tblHotel1" />
+          <NavigationProperty Name="tblHotelRoom1" Relationship="BPDataModel.FK_tblHotelImage_tblHotelRoom1" FromRole="tblHotelImage" ToRole="tblHotelRoom1" />
+        </EntityType>
+        <EntityType Name="tblHotelRoomPro1">
+          <Key>
+            <PropertyRef Name="RoomProTypeID" />
+            <PropertyRef Name="HotelRoomID" />
+            <PropertyRef Name="HotelSchSD" />
+          </Key>
+          <Property Name="RoomProTypeID" Type="Int32" Nullable="false" />
+          <Property Name="HotelRoomID" Type="Int32" Nullable="false" />
+          <Property Name="HotelSchSD" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HotelProCost" Type="Int32" Nullable="false" />
+          <Property Name="HotelProSale" Type="Int32" Nullable="false" />
+          <Property Name="HotelProPlus" Type="Int32" Nullable="false" />
+          <Property Name="HotelProPlusP" Type="Int32" Nullable="false" />
+          <Property Name="HotelProAD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HotelProUD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HotelProEnable" Type="Boolean" Nullable="false" />
+          <Property Name="LoginID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblHotelRPType" Relationship="Self.FK_tblHotelRoomPro1_tblHotelRPType" FromRole="tblHotelRoomPro1" ToRole="tblHotelRPType" />
+          <NavigationProperty Name="tblHotelSch1" Relationship="Self.FK_tblHotelRoomPro1_tblHotelSch1" FromRole="tblHotelRoomPro1" ToRole="tblHotelSch1" />
+          <NavigationProperty Name="tblDIYHotelOItem" Relationship="BPDataModel.FK_tblDIYHotelOItem_tblHotelRoomPro1" FromRole="tblHotelRoomPro1" ToRole="tblDIYHotelOItem" />
+        </EntityType>
+        <EntityType Name="tblHotelRoomType">
+          <Key>
+            <PropertyRef Name="RoomTypeID" />
+          </Key>
+          <Property Name="RoomTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="RoomCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblHotelRoom1" Relationship="BPDataModel.FK_tblHotelRoom1_tblHotelRoomType" FromRole="tblHotelRoomType" ToRole="tblHotelRoom1" />
+        </EntityType>
+        <EntityType Name="tblHotelRPType">
+          <Key>
+            <PropertyRef Name="RoomProTypeID" />
+          </Key>
+          <Property Name="RoomProTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomProName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoomProNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoomProEnable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblHotelRoomPro1" Relationship="Self.FK_tblHotelRoomPro1_tblHotelRPType" FromRole="tblHotelRPType" ToRole="tblHotelRoomPro1" />
+        </EntityType>
+        <EntityType Name="tblHotelSch1">
+          <Key>
+            <PropertyRef Name="HotelRoomID" />
+            <PropertyRef Name="HotelSchSD" />
+          </Key>
+          <Property Name="HotelRoomID" Type="Int32" Nullable="false" />
+          <Property Name="HotelSchSD" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LoginID" Type="Int32" Nullable="false" />
+          <Property Name="HotelSchQty" Type="Int32" Nullable="false" />
+          <Property Name="HotelSchAD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HotelSchUD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HotelSchEnable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblHotelRoomPro1" Relationship="Self.FK_tblHotelRoomPro1_tblHotelSch1" FromRole="tblHotelSch1" ToRole="tblHotelRoomPro1" />
+          <NavigationProperty Name="tblHotelRoom1" Relationship="BPDataModel.FK_tblHotelSch1_tblHotelRoom1" FromRole="tblHotelSch1" ToRole="tblHotelRoom1" />
+        </EntityType>
+        <Association Name="FK_tblHotel1_tblDicCity">
+          <End Role="tblDicCity" Type="BPDataModel.tblDicCity1" Multiplicity="1" />
+          <End Role="tblHotel1" Type="Self.tblHotel1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDicCity">
+              <PropertyRef Name="DicCityID" />
+            </Principal>
+            <Dependent Role="tblHotel1">
+              <PropertyRef Name="DicCityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotel1_tblDicRegion">
+          <End Role="tblDicRegion" Type="BPDataModel.tblDicRegion1" Multiplicity="1" />
+          <End Role="tblHotel1" Type="Self.tblHotel1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDicRegion">
+              <PropertyRef Name="DicRegionID" />
+            </Principal>
+            <Dependent Role="tblHotel1">
+              <PropertyRef Name="DicRegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelImage_tblHotel1">
+          <End Role="tblHotel1" Type="Self.tblHotel1" Multiplicity="0..1" />
+          <End Role="tblHotelImage" Type="Self.tblHotelImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotel1">
+              <PropertyRef Name="HotelID" />
+            </Principal>
+            <Dependent Role="tblHotelImage">
+              <PropertyRef Name="HotelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelRoomPro1_tblHotelRPType">
+          <End Role="tblHotelRPType" Type="Self.tblHotelRPType" Multiplicity="1" />
+          <End Role="tblHotelRoomPro1" Type="Self.tblHotelRoomPro1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRPType">
+              <PropertyRef Name="RoomProTypeID" />
+            </Principal>
+            <Dependent Role="tblHotelRoomPro1">
+              <PropertyRef Name="RoomProTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelRoomPro1_tblHotelSch1">
+          <End Role="tblHotelSch1" Type="Self.tblHotelSch1" Multiplicity="1" />
+          <End Role="tblHotelRoomPro1" Type="Self.tblHotelRoomPro1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelSch1">
+              <PropertyRef Name="HotelRoomID" />
+              <PropertyRef Name="HotelSchSD" />
+            </Principal>
+            <Dependent Role="tblHotelRoomPro1">
+              <PropertyRef Name="HotelRoomID" />
+              <PropertyRef Name="HotelSchSD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BPDataModel2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblDicCity1" EntityType="BPDataModel.tblDicCity1" />
+          <EntitySet Name="tblDicRegion1" EntityType="BPDataModel.tblDicRegion1" />
+          <EntitySet Name="tblHotel1" EntityType="Self.tblHotel1" />
+          <EntitySet Name="tblHotelImage" EntityType="Self.tblHotelImage" />
+          <EntitySet Name="tblHotelRoomPro1" EntityType="Self.tblHotelRoomPro1" />
+          <EntitySet Name="tblHotelRoomType" EntityType="Self.tblHotelRoomType" />
+          <EntitySet Name="tblHotelRPType" EntityType="Self.tblHotelRPType" />
+          <EntitySet Name="tblHotelSch1" EntityType="Self.tblHotelSch1" />
+          <AssociationSet Name="FK_tblHotel1_tblDicCity" Association="Self.FK_tblHotel1_tblDicCity">
+            <End Role="tblDicCity" EntitySet="tblDicCity1" />
+            <End Role="tblHotel1" EntitySet="tblHotel1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotel1_tblDicRegion" Association="Self.FK_tblHotel1_tblDicRegion">
+            <End Role="tblDicRegion" EntitySet="tblDicRegion1" />
+            <End Role="tblHotel1" EntitySet="tblHotel1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelImage_tblHotel1" Association="Self.FK_tblHotelImage_tblHotel1">
+            <End Role="tblHotel1" EntitySet="tblHotel1" />
+            <End Role="tblHotelImage" EntitySet="tblHotelImage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelRoomPro1_tblHotelRPType" Association="Self.FK_tblHotelRoomPro1_tblHotelRPType">
+            <End Role="tblHotelRPType" EntitySet="tblHotelRPType" />
+            <End Role="tblHotelRoomPro1" EntitySet="tblHotelRoomPro1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelRoomPro1_tblHotelSch1" Association="Self.FK_tblHotelRoomPro1_tblHotelSch1">
+            <End Role="tblHotelSch1" EntitySet="tblHotelSch1" />
+            <End Role="tblHotelRoomPro1" EntitySet="tblHotelRoomPro1" />
+          </AssociationSet>
+          <EntitySet Name="tblHotelRoom1" EntityType="BPDataModel.tblHotelRoom1" />
+          <AssociationSet Name="FK_tblHotelRoom1_tblHotel1" Association="BPDataModel.FK_tblHotelRoom1_tblHotel1">
+            <End Role="tblHotel1" EntitySet="tblHotel1" />
+            <End Role="tblHotelRoom1" EntitySet="tblHotelRoom1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelImage_tblHotelRoom1" Association="BPDataModel.FK_tblHotelImage_tblHotelRoom1">
+            <End Role="tblHotelRoom1" EntitySet="tblHotelRoom1" />
+            <End Role="tblHotelImage" EntitySet="tblHotelImage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelRoom1_tblHotelRoomType" Association="BPDataModel.FK_tblHotelRoom1_tblHotelRoomType">
+            <End Role="tblHotelRoomType" EntitySet="tblHotelRoomType" />
+            <End Role="tblHotelRoom1" EntitySet="tblHotelRoom1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHotelSch1_tblHotelRoom1" Association="BPDataModel.FK_tblHotelSch1_tblHotelRoom1">
+            <End Role="tblHotelRoom1" EntitySet="tblHotelRoom1" />
+            <End Role="tblHotelSch1" EntitySet="tblHotelSch1" />
+          </AssociationSet>
+          <EntitySet Name="tblDIYHotelOItem" EntityType="BPDataModel.tblDIYHotelOItem" />
+          <EntitySet Name="tblDIYHotelOU" EntityType="BPDataModel.tblDIYHotelOU" />
+          <EntitySet Name="tblDIYOrder" EntityType="BPDataModel.tblDIYOrder" />
+          <EntitySet Name="tblDIYUser" EntityType="BPDataModel.tblDIYUser" />
+          <EntitySet Name="tblDIYUserExt" EntityType="BPDataModel.tblDIYUserExt" />
+          <AssociationSet Name="FK_tblDIYHotelOItem_tblDIYHotelO" Association="BPDataModel.FK_tblDIYHotelOItem_tblDIYHotelO">
+            <End Role="tblDIYOrder" EntitySet="tblDIYOrder" />
+            <End Role="tblDIYHotelOItem" EntitySet="tblDIYHotelOItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYHotelOItem_tblHotelRoomPro1" Association="BPDataModel.FK_tblDIYHotelOItem_tblHotelRoomPro1">
+            <End Role="tblHotelRoomPro1" EntitySet="tblHotelRoomPro1" />
+            <End Role="tblDIYHotelOItem" EntitySet="tblDIYHotelOItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYHotelOU_tblDIYHotelOU" Association="BPDataModel.FK_tblDIYHotelOU_tblDIYHotelOU">
+            <End Role="tblDIYOrder" EntitySet="tblDIYOrder" />
+            <End Role="tblDIYHotelOU" EntitySet="tblDIYHotelOU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYHotelOU_tblDIYUser" Association="BPDataModel.FK_tblDIYHotelOU_tblDIYUser">
+            <End Role="tblDIYUser" EntitySet="tblDIYUser" />
+            <End Role="tblDIYHotelOU" EntitySet="tblDIYHotelOU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYOrder_tblDIYUser" Association="BPDataModel.FK_tblDIYOrder_tblDIYUser">
+            <End Role="tblDIYUser" EntitySet="tblDIYUser" />
+            <End Role="tblDIYOrder" EntitySet="tblDIYOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDIYUserExt_tblDIYUser" Association="BPDataModel.FK_tblDIYUserExt_tblDIYUser">
+            <End Role="tblDIYUser" EntitySet="tblDIYUser" />
+            <End Role="tblDIYUserExt" EntitySet="tblDIYUserExt" />
+          </AssociationSet>
+          <EntitySet Name="tblLoginD" EntityType="BPDataModel.tblLoginD" />
+          <EntitySet Name="tblMailGroup" EntityType="BPDataModel.tblMailGroup" />
+          <AssociationSet Name="FK_tblDIYOrder_tblLogin" Association="BPDataModel.FK_tblDIYOrder_tblLogin">
+            <End Role="tblLogin" EntitySet="tblLoginD" />
+            <End Role="tblDIYOrder" EntitySet="tblDIYOrder" />
+          </AssociationSet>
+          <AssociationSet Name="tblMailGroupItem" Association="BPDataModel.tblMailGroupItem">
+            <End Role="tblLogin" EntitySet="tblLoginD" />
+            <End Role="tblMailGroup" EntitySet="tblMailGroup" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblHotelRoom1">
+          <Key>
+            <PropertyRef Name="HotelRoomID" />
+          </Key>
+          <Property Name="HotelRoomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HiLiteID" Type="Int32" Nullable="false" />
+          <Property Name="LoginID" Type="Int32" Nullable="false" />
+          <Property Name="HotelID" Type="Int32" Nullable="false" />
+          <Property Name="RoomTypeID" Type="Int32" Nullable="false" />
+          <Property Name="HotelRoomNm" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomNum" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomBed" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomArea" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomAPPL" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomFloor" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomBath" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomWin" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomFac" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomPPL" Type="Int32" Nullable="false" />
+          <Property Name="HotelRoomPrice" Type="Int32" Nullable="false" />
+          <Property Name="HotelRoomSale" Type="Int32" Nullable="false" />
+          <Property Name="HotelRoomNote" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomNote1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HotelRoomAD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HotelRoomUD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HotelRoomDef" Type="Boolean" Nullable="false" />
+          <Property Name="HotelRoomEnable" Type="Boolean" Nullable="false" />
+          <Property Name="HotelRoomDel" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblHotel1" Relationship="BPDataModel.FK_tblHotelRoom1_tblHotel1" FromRole="tblHotelRoom1" ToRole="tblHotel1" />
+          <NavigationProperty Name="tblHotelImage" Relationship="BPDataModel.FK_tblHotelImage_tblHotelRoom1" FromRole="tblHotelRoom1" ToRole="tblHotelImage" />
+          <NavigationProperty Name="tblHotelRoomType" Relationship="BPDataModel.FK_tblHotelRoom1_tblHotelRoomType" FromRole="tblHotelRoom1" ToRole="tblHotelRoomType" />
+          <NavigationProperty Name="tblHotelSch1" Relationship="BPDataModel.FK_tblHotelSch1_tblHotelRoom1" FromRole="tblHotelRoom1" ToRole="tblHotelSch1" />
+        </EntityType>
+        <Association Name="FK_tblHotelRoom1_tblHotel1">
+          <End Type="BPDataModel.tblHotel1" Role="tblHotel1" Multiplicity="1" />
+          <End Type="BPDataModel.tblHotelRoom1" Role="tblHotelRoom1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotel1">
+              <PropertyRef Name="HotelID" />
+            </Principal>
+            <Dependent Role="tblHotelRoom1">
+              <PropertyRef Name="HotelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelImage_tblHotelRoom1">
+          <End Type="BPDataModel.tblHotelRoom1" Role="tblHotelRoom1" Multiplicity="0..1" />
+          <End Type="BPDataModel.tblHotelImage" Role="tblHotelImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRoom1">
+              <PropertyRef Name="HotelRoomID" />
+            </Principal>
+            <Dependent Role="tblHotelImage">
+              <PropertyRef Name="HotelRoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelRoom1_tblHotelRoomType">
+          <End Type="BPDataModel.tblHotelRoomType" Role="tblHotelRoomType" Multiplicity="1" />
+          <End Type="BPDataModel.tblHotelRoom1" Role="tblHotelRoom1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRoomType">
+              <PropertyRef Name="RoomTypeID" />
+            </Principal>
+            <Dependent Role="tblHotelRoom1">
+              <PropertyRef Name="RoomTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHotelSch1_tblHotelRoom1">
+          <End Type="BPDataModel.tblHotelRoom1" Role="tblHotelRoom1" Multiplicity="1" />
+          <End Type="BPDataModel.tblHotelSch1" Role="tblHotelSch1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRoom1">
+              <PropertyRef Name="HotelRoomID" />
+            </Principal>
+            <Dependent Role="tblHotelSch1">
+              <PropertyRef Name="HotelRoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblDIYHotelOItem">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="RoomProTypeID" />
+            <PropertyRef Name="HotelRoomID" />
+            <PropertyRef Name="HotelSchSD" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="RoomProTypeID" Type="Int32" Nullable="false" />
+          <Property Name="HotelRoomID" Type="Int32" Nullable="false" />
+          <Property Name="HotelSchSD" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="OrderRoomPrice" Type="Int32" Nullable="false" />
+          <Property Name="OrderRoomQty" Type="Int32" Nullable="false" />
+          <Property Name="OrderRoomPriceC" Type="Int32" Nullable="false" />
+          <Property Name="OrderRoomQtyC" Type="Int32" Nullable="false" />
+          <Property Name="CheckInTime" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="OrderEnable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblDIYOrder" Relationship="BPDataModel.FK_tblDIYHotelOItem_tblDIYHotelO" FromRole="tblDIYHotelOItem" ToRole="tblDIYOrder" />
+          <NavigationProperty Name="tblHotelRoomPro1" Relationship="BPDataModel.FK_tblDIYHotelOItem_tblHotelRoomPro1" FromRole="tblDIYHotelOItem" ToRole="tblHotelRoomPro1" />
+        </EntityType>
+        <EntityType Name="tblDIYHotelOU">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="RoomGroup" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblDIYOrder" Relationship="BPDataModel.FK_tblDIYHotelOU_tblDIYHotelOU" FromRole="tblDIYHotelOU" ToRole="tblDIYOrder" />
+          <NavigationProperty Name="tblDIYUser" Relationship="BPDataModel.FK_tblDIYHotelOU_tblDIYUser" FromRole="tblDIYHotelOU" ToRole="tblDIYUser" />
+        </EntityType>
+        <EntityType Name="tblDIYOrder">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="OrderAD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderStatus" Type="Int32" Nullable="false" />
+          <Property Name="OrderUD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LoginID" Type="Int32" />
+          <Property Name="OrderPrice" Type="Int32" Nullable="false" />
+          <Property Name="PayPrice" Type="Int32" />
+          <Property Name="OrderNote" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderNoteSales" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblDIYHotelOItem" Relationship="BPDataModel.FK_tblDIYHotelOItem_tblDIYHotelO" FromRole="tblDIYOrder" ToRole="tblDIYHotelOItem" />
+          <NavigationProperty Name="tblDIYHotelOU" Relationship="BPDataModel.FK_tblDIYHotelOU_tblDIYHotelOU" FromRole="tblDIYOrder" ToRole="tblDIYHotelOU" />
+          <NavigationProperty Name="tblDIYUser" Relationship="BPDataModel.FK_tblDIYOrder_tblDIYUser" FromRole="tblDIYOrder" ToRole="tblDIYUser" />
+          <NavigationProperty Name="tblLogin" Relationship="BPDataModel.FK_tblDIYOrder_tblLogin" FromRole="tblDIYOrder" ToRole="tblLogin" />
+          <Property Name="PayID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PayTime" Type="DateTime" Precision="3" />
+          <Property Name="PayType" Type="Int32" Nullable="false" />
+          <Property Name="PayStatus" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDIYUser">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CFName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="CLName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblDIYHotelOU" Relationship="BPDataModel.FK_tblDIYHotelOU_tblDIYUser" FromRole="tblDIYUser" ToRole="tblDIYHotelOU" />
+          <NavigationProperty Name="tblDIYOrder" Relationship="BPDataModel.FK_tblDIYOrder_tblDIYUser" FromRole="tblDIYUser" ToRole="tblDIYOrder" />
+          <NavigationProperty Name="tblDIYUserExt" Relationship="BPDataModel.FK_tblDIYUserExt_tblDIYUser" FromRole="tblDIYUser" ToRole="tblDIYUserExt" />
+          <Property Name="Sex" Type="Boolean" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tblDIYUserExt">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TelH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Counties" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Townships" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Addr" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="EmailEnable" Type="Boolean" />
+          <NavigationProperty Name="tblDIYUser" Relationship="BPDataModel.FK_tblDIYUserExt_tblDIYUser" FromRole="tblDIYUserExt" ToRole="tblDIYUser" />
+        </EntityType>
+        <Association Name="FK_tblDIYHotelOItem_tblDIYHotelO">
+          <End Type="BPDataModel.tblDIYOrder" Role="tblDIYOrder" Multiplicity="1" />
+          <End Type="BPDataModel.tblDIYHotelOItem" Role="tblDIYHotelOItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYOrder">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="tblDIYHotelOItem">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYHotelOItem_tblHotelRoomPro1">
+          <End Type="BPDataModel.tblHotelRoomPro1" Role="tblHotelRoomPro1" Multiplicity="1" />
+          <End Type="BPDataModel.tblDIYHotelOItem" Role="tblDIYHotelOItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHotelRoomPro1">
+              <PropertyRef Name="RoomProTypeID" />
+              <PropertyRef Name="HotelRoomID" />
+              <PropertyRef Name="HotelSchSD" />
+            </Principal>
+            <Dependent Role="tblDIYHotelOItem">
+              <PropertyRef Name="RoomProTypeID" />
+              <PropertyRef Name="HotelRoomID" />
+              <PropertyRef Name="HotelSchSD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYHotelOU_tblDIYHotelOU">
+          <End Type="BPDataModel.tblDIYOrder" Role="tblDIYOrder" Multiplicity="1" />
+          <End Type="BPDataModel.tblDIYHotelOU" Role="tblDIYHotelOU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYOrder">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="tblDIYHotelOU">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYHotelOU_tblDIYUser">
+          <End Type="BPDataModel.tblDIYUser" Role="tblDIYUser" Multiplicity="1" />
+          <End Type="BPDataModel.tblDIYHotelOU" Role="tblDIYHotelOU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="tblDIYHotelOU">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYOrder_tblDIYUser">
+          <End Type="BPDataModel.tblDIYUser" Role="tblDIYUser" Multiplicity="1" />
+          <End Type="BPDataModel.tblDIYOrder" Role="tblDIYOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="tblDIYOrder">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDIYUserExt_tblDIYUser">
+          <End Type="BPDataModel.tblDIYUser" Role="tblDIYUser" Multiplicity="1" />
+          <End Type="BPDataModel.tblDIYUserExt" Role="tblDIYUserExt" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tblDIYUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="tblDIYUserExt">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblLoginD">
+          <Key>
+            <PropertyRef Name="LoginID" />
+          </Key>
+          <Property Name="LoginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HiLiteID" Type="Int32" Nullable="false" />
+          <Property Name="LoginCode" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginCNm" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginNm" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginSex" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoginPWD" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginEmail" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginURL" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginIP" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginTelD" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginTelM" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginYAHOO" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginMSN" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginMSN1" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginSKYPE" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginPP" Type="Int32" Nullable="false" />
+          <Property Name="LoginBD" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginAddr" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginCP" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginCT" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginOD" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginLD" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginRole" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="LoginADate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LoginEnable" Type="Boolean" Nullable="false" />
+          <Property Name="LoginDel" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblDIYOrder" Relationship="BPDataModel.FK_tblDIYOrder_tblLogin" FromRole="tblLogin" ToRole="tblDIYOrder" />
+          <NavigationProperty Name="tblMailGroup" Relationship="BPDataModel.tblMailGroupItem" FromRole="tblLogin" ToRole="tblMailGroup" />
+        </EntityType>
+        <EntityType Name="tblMailGroup">
+          <Key>
+            <PropertyRef Name="MailGroupID" />
+          </Key>
+          <Property Name="MailGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MailGroupName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblLogin" Relationship="BPDataModel.tblMailGroupItem" FromRole="tblMailGroup" ToRole="tblLogin" />
+        </EntityType>
+        <Association Name="FK_tblDIYOrder_tblLogin">
+          <End Type="BPDataModel.tblLoginD" Role="tblLogin" Multiplicity="0..1" />
+          <End Type="BPDataModel.tblDIYOrder" Role="tblDIYOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLogin">
+              <PropertyRef Name="LoginID" />
+            </Principal>
+            <Dependent Role="tblDIYOrder">
+              <PropertyRef Name="LoginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblMailGroupItem">
+          <End Type="BPDataModel.tblLoginD" Role="tblLogin" Multiplicity="*" />
+          <End Type="BPDataModel.tblMailGroup" Role="tblMailGroup" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BPDataModelStoreContainer" CdmEntityContainer="BPDataModel2">
+          <EntitySetMapping Name="tblDicCity1">
+            <EntityTypeMapping TypeName="BPDataModel.tblDicCity1">
+              <MappingFragment StoreEntitySet="tblDicCity">
+                <ScalarProperty Name="DicCityID" ColumnName="DicCityID" />
+                <ScalarProperty Name="DicCountryCode" ColumnName="DicCountryCode" />
+                <ScalarProperty Name="DicCityCode" ColumnName="DicCityCode" />
+                <ScalarProperty Name="DicCityNm" ColumnName="DicCityNm" />
+                <ScalarProperty Name="DicCityTC" ColumnName="DicCityTC" />
+                <ScalarProperty Name="DicCitySort" ColumnName="DicCitySort" />
+                <ScalarProperty Name="DicCityADate" ColumnName="DicCityADate" />
+                <ScalarProperty Name="DicCityEnable" ColumnName="DicCityEnable" />
+                <ScalarProperty Name="DicCityDel" ColumnName="DicCityDel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDicRegion1">
+            <EntityTypeMapping TypeName="BPDataModel.tblDicRegion1">
+              <MappingFragment StoreEntitySet="tblDicRegion">
+                <ScalarProperty Name="DicRegionID" ColumnName="DicRegionID" />
+                <ScalarProperty Name="DicCountryCode" ColumnName="DicCountryCode" />
+                <ScalarProperty Name="DicAreaCode" ColumnName="DicAreaCode" />
+                <ScalarProperty Name="DicRegionCode" ColumnName="DicRegionCode" />
+                <ScalarProperty Name="DicRegionNm" ColumnName="DicRegionNm" />
+                <ScalarProperty Name="DicRegionENm" ColumnName="DicRegionENm" />
+                <ScalarProperty Name="DicRegionSort" ColumnName="DicRegionSort" />
+                <ScalarProperty Name="DicRegionADate" ColumnName="DicRegionADate" />
+                <ScalarProperty Name="DicRegionEnable" ColumnName="DicRegionEnable" />
+                <ScalarProperty Name="DicRegionDel" ColumnName="DicRegionDel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHotel1">
+            <EntityTypeMapping TypeName="BPDataModel.tblHotel1">
+              <MappingFragment StoreEntitySet="tblHotel1">
+                <ScalarProperty Name="HotelID" ColumnName="HotelID" />
+                <ScalarProperty Name="HiLiteID" ColumnName="HiLiteID" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="HotelCoun" ColumnName="HotelCoun" />
+                <ScalarProperty Name="HotelCity" ColumnName="HotelCity" />
+                <ScalarProperty Name="HotelLocate" ColumnName="HotelLocate" />
+                <ScalarProperty Name="HotelRegion" ColumnName="HotelRegion" />
+                <ScalarProperty Name="HotelNm" ColumnName="HotelNm" />
+                <ScalarProperty Name="HotelENm" ColumnName="HotelENm" />
+                <ScalarProperty Name="HotelSNm" ColumnName="HotelSNm" />
+                <ScalarProperty Name="HotelCat" ColumnName="HotelCat" />
+                <ScalarProperty Name="HotelClass" ColumnName="HotelClass" />
+                <ScalarProperty Name="HotelURL" ColumnName="HotelURL" />
+                <ScalarProperty Name="HotelRoom" ColumnName="HotelRoom" />
+                <ScalarProperty Name="HotelDist" ColumnName="HotelDist" />
+                <ScalarProperty Name="HotelAddr" ColumnName="HotelAddr" />
+                <ScalarProperty Name="HotelZip" ColumnName="HotelZip" />
+                <ScalarProperty Name="HotelCDist" ColumnName="HotelCDist" />
+                <ScalarProperty Name="HotelCAddr" ColumnName="HotelCAddr" />
+                <ScalarProperty Name="HotelTelD" ColumnName="HotelTelD" />
+                <ScalarProperty Name="HotelTelF" ColumnName="HotelTelF" />
+                <ScalarProperty Name="HotelLoc" ColumnName="HotelLoc" />
+                <ScalarProperty Name="HotelDetail" ColumnName="HotelDetail" />
+                <ScalarProperty Name="HotelFacility" ColumnName="HotelFacility" />
+                <ScalarProperty Name="HotelFunction" ColumnName="HotelFunction" />
+                <ScalarProperty Name="HotelDate" ColumnName="HotelDate" />
+                <ScalarProperty Name="HotelEnable" ColumnName="HotelEnable" />
+                <ScalarProperty Name="HotelDel" ColumnName="HotelDel" />
+                <ScalarProperty Name="DicCityID" ColumnName="DicCityID" />
+                <ScalarProperty Name="DicRegionID" ColumnName="DicRegionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHotelImage">
+            <EntityTypeMapping TypeName="BPDataModel.tblHotelImage">
+              <MappingFragment StoreEntitySet="tblHotelImage">
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="HotelID" ColumnName="HotelID" />
+                <ScalarProperty Name="HotelRoomID" ColumnName="HotelRoomID" />
+                <ScalarProperty Name="ImageEnable" ColumnName="ImageEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHotelRoomPro1">
+            <EntityTypeMapping TypeName="BPDataModel.tblHotelRoomPro1">
+              <MappingFragment StoreEntitySet="tblHotelRoomPro1">
+                <ScalarProperty Name="RoomProTypeID" ColumnName="RoomProTypeID" />
+                <ScalarProperty Name="HotelRoomID" ColumnName="HotelRoomID" />
+                <ScalarProperty Name="HotelSchSD" ColumnName="HotelSchSD" />
+                <ScalarProperty Name="HotelProCost" ColumnName="HotelProCost" />
+                <ScalarProperty Name="HotelProSale" ColumnName="HotelProSale" />
+                <ScalarProperty Name="HotelProPlus" ColumnName="HotelProPlus" />
+                <ScalarProperty Name="HotelProPlusP" ColumnName="HotelProPlusP" />
+                <ScalarProperty Name="HotelProAD" ColumnName="HotelProAD" />
+                <ScalarProperty Name="HotelProUD" ColumnName="HotelProUD" />
+                <ScalarProperty Name="HotelProEnable" ColumnName="HotelProEnable" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHotelRoomType">
+            <EntityTypeMapping TypeName="BPDataModel.tblHotelRoomType">
+              <MappingFragment StoreEntitySet="tblHotelRoomType">
+                <ScalarProperty Name="RoomTypeID" ColumnName="RoomTypeID" />
+                <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+                <ScalarProperty Name="RoomCode" ColumnName="RoomCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHotelRPType">
+            <EntityTypeMapping TypeName="BPDataModel.tblHotelRPType">
+              <MappingFragment StoreEntitySet="tblHotelRPType">
+                <ScalarProperty Name="RoomProTypeID" ColumnName="RoomProTypeID" />
+                <ScalarProperty Name="RoomProName" ColumnName="RoomProName" />
+                <ScalarProperty Name="RoomProNote" ColumnName="RoomProNote" />
+                <ScalarProperty Name="RoomProEnable" ColumnName="RoomProEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHotelSch1">
+            <EntityTypeMapping TypeName="BPDataModel.tblHotelSch1">
+              <MappingFragment StoreEntitySet="tblHotelSch1">
+                <ScalarProperty Name="HotelRoomID" ColumnName="HotelRoomID" />
+                <ScalarProperty Name="HotelSchSD" ColumnName="HotelSchSD" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="HotelSchQty" ColumnName="HotelSchQty" />
+                <ScalarProperty Name="HotelSchAD" ColumnName="HotelSchAD" />
+                <ScalarProperty Name="HotelSchUD" ColumnName="HotelSchUD" />
+                <ScalarProperty Name="HotelSchEnable" ColumnName="HotelSchEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHotelRoom1">
+            <EntityTypeMapping TypeName="BPDataModel.tblHotelRoom1">
+              <MappingFragment StoreEntitySet="tblHotelRoom1">
+                <ScalarProperty Name="HotelRoomDel" ColumnName="HotelRoomDel" />
+                <ScalarProperty Name="HotelRoomEnable" ColumnName="HotelRoomEnable" />
+                <ScalarProperty Name="HotelRoomDef" ColumnName="HotelRoomDef" />
+                <ScalarProperty Name="HotelRoomUD" ColumnName="HotelRoomUD" />
+                <ScalarProperty Name="HotelRoomAD" ColumnName="HotelRoomAD" />
+                <ScalarProperty Name="HotelRoomNote1" ColumnName="HotelRoomNote1" />
+                <ScalarProperty Name="HotelRoomNote" ColumnName="HotelRoomNote" />
+                <ScalarProperty Name="HotelRoomSale" ColumnName="HotelRoomSale" />
+                <ScalarProperty Name="HotelRoomPrice" ColumnName="HotelRoomPrice" />
+                <ScalarProperty Name="HotelRoomPPL" ColumnName="HotelRoomPPL" />
+                <ScalarProperty Name="HotelRoomFac" ColumnName="HotelRoomFac" />
+                <ScalarProperty Name="HotelRoomWin" ColumnName="HotelRoomWin" />
+                <ScalarProperty Name="HotelRoomBath" ColumnName="HotelRoomBath" />
+                <ScalarProperty Name="HotelRoomFloor" ColumnName="HotelRoomFloor" />
+                <ScalarProperty Name="HotelRoomAPPL" ColumnName="HotelRoomAPPL" />
+                <ScalarProperty Name="HotelRoomArea" ColumnName="HotelRoomArea" />
+                <ScalarProperty Name="HotelRoomBed" ColumnName="HotelRoomBed" />
+                <ScalarProperty Name="HotelRoomNum" ColumnName="HotelRoomNum" />
+                <ScalarProperty Name="HotelRoomNm" ColumnName="HotelRoomNm" />
+                <ScalarProperty Name="RoomTypeID" ColumnName="RoomTypeID" />
+                <ScalarProperty Name="HotelID" ColumnName="HotelID" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="HiLiteID" ColumnName="HiLiteID" />
+                <ScalarProperty Name="HotelRoomID" ColumnName="HotelRoomID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDIYHotelOItem">
+            <EntityTypeMapping TypeName="BPDataModel.tblDIYHotelOItem">
+              <MappingFragment StoreEntitySet="tblDIYHotelOItem">
+                <ScalarProperty Name="OrderEnable" ColumnName="OrderEnable" />
+                <ScalarProperty Name="CheckInTime" ColumnName="CheckInTime" />
+                <ScalarProperty Name="OrderRoomQtyC" ColumnName="OrderRoomQtyC" />
+                <ScalarProperty Name="OrderRoomPriceC" ColumnName="OrderRoomPriceC" />
+                <ScalarProperty Name="OrderRoomQty" ColumnName="OrderRoomQty" />
+                <ScalarProperty Name="OrderRoomPrice" ColumnName="OrderRoomPrice" />
+                <ScalarProperty Name="HotelSchSD" ColumnName="HotelSchSD" />
+                <ScalarProperty Name="HotelRoomID" ColumnName="HotelRoomID" />
+                <ScalarProperty Name="RoomProTypeID" ColumnName="RoomProTypeID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDIYHotelOU">
+            <EntityTypeMapping TypeName="BPDataModel.tblDIYHotelOU">
+              <MappingFragment StoreEntitySet="tblDIYHotelOU">
+                <ScalarProperty Name="RoomGroup" ColumnName="RoomGroup" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDIYOrder">
+            <EntityTypeMapping TypeName="BPDataModel.tblDIYOrder">
+              <MappingFragment StoreEntitySet="tblDIYOrder">
+                <ScalarProperty Name="PayStatus" ColumnName="PayStatus" />
+                <ScalarProperty Name="PayType" ColumnName="PayType" />
+                <ScalarProperty Name="PayTime" ColumnName="PayTime" />
+                <ScalarProperty Name="PayID" ColumnName="PayID" />
+                <ScalarProperty Name="OrderNoteSales" ColumnName="OrderNoteSales" />
+                <ScalarProperty Name="OrderNote" ColumnName="OrderNote" />
+                <ScalarProperty Name="PayPrice" ColumnName="PayPrice" />
+                <ScalarProperty Name="OrderPrice" ColumnName="OrderPrice" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="OrderUD" ColumnName="OrderUD" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OrderAD" ColumnName="OrderAD" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDIYUser">
+            <EntityTypeMapping TypeName="BPDataModel.tblDIYUser">
+              <MappingFragment StoreEntitySet="tblDIYUser">
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="CLName" ColumnName="CLName" />
+                <ScalarProperty Name="CFName" ColumnName="CFName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDIYUserExt">
+            <EntityTypeMapping TypeName="BPDataModel.tblDIYUserExt">
+              <MappingFragment StoreEntitySet="tblDIYUserExt">
+                <ScalarProperty Name="EmailEnable" ColumnName="EmailEnable" />
+                <ScalarProperty Name="Addr" ColumnName="Addr" />
+                <ScalarProperty Name="Townships" ColumnName="Townships" />
+                <ScalarProperty Name="Counties" ColumnName="Counties" />
+                <ScalarProperty Name="TelM" ColumnName="TelM" />
+                <ScalarProperty Name="TelH" ColumnName="TelH" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLoginD">
+            <EntityTypeMapping TypeName="BPDataModel.tblLoginD">
+              <MappingFragment StoreEntitySet="tblLogin">
+                <ScalarProperty Name="LoginDel" ColumnName="LoginDel" />
+                <ScalarProperty Name="LoginEnable" ColumnName="LoginEnable" />
+                <ScalarProperty Name="LoginADate" ColumnName="LoginADate" />
+                <ScalarProperty Name="LoginRole" ColumnName="LoginRole" />
+                <ScalarProperty Name="LoginLD" ColumnName="LoginLD" />
+                <ScalarProperty Name="LoginOD" ColumnName="LoginOD" />
+                <ScalarProperty Name="LoginCT" ColumnName="LoginCT" />
+                <ScalarProperty Name="LoginCP" ColumnName="LoginCP" />
+                <ScalarProperty Name="LoginAddr" ColumnName="LoginAddr" />
+                <ScalarProperty Name="LoginBD" ColumnName="LoginBD" />
+                <ScalarProperty Name="LoginPP" ColumnName="LoginPP" />
+                <ScalarProperty Name="LoginSKYPE" ColumnName="LoginSKYPE" />
+                <ScalarProperty Name="LoginMSN1" ColumnName="LoginMSN1" />
+                <ScalarProperty Name="LoginMSN" ColumnName="LoginMSN" />
+                <ScalarProperty Name="LoginYAHOO" ColumnName="LoginYAHOO" />
+                <ScalarProperty Name="LoginTelM" ColumnName="LoginTelM" />
+                <ScalarProperty Name="LoginTelD" ColumnName="LoginTelD" />
+                <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+                <ScalarProperty Name="LoginURL" ColumnName="LoginURL" />
+                <ScalarProperty Name="LoginEmail" ColumnName="LoginEmail" />
+                <ScalarProperty Name="LoginPWD" ColumnName="LoginPWD" />
+                <ScalarProperty Name="LoginSex" ColumnName="LoginSex" />
+                <ScalarProperty Name="LoginNm" ColumnName="LoginNm" />
+                <ScalarProperty Name="LoginCNm" ColumnName="LoginCNm" />
+                <ScalarProperty Name="LoginCode" ColumnName="LoginCode" />
+                <ScalarProperty Name="HiLiteID" ColumnName="HiLiteID" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMailGroup">
+            <EntityTypeMapping TypeName="BPDataModel.tblMailGroup">
+              <MappingFragment StoreEntitySet="tblMailGroup">
+                <ScalarProperty Name="MailGroupName" ColumnName="MailGroupName" />
+                <ScalarProperty Name="MailGroupID" ColumnName="MailGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="tblMailGroupItem" TypeName="BPDataModel.tblMailGroupItem" StoreEntitySet="tblMailGroupItem">
+            <EndProperty Name="tblMailGroup">
+              <ScalarProperty Name="MailGroupID" ColumnName="MailGroupID" />
+            </EndProperty>
+            <EndProperty Name="tblLogin">
+              <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

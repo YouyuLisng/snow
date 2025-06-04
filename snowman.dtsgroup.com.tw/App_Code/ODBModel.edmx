@@ -1,0 +1,1699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ODB_DTSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="OTB_SYS_ArgumentClass">
+          <Key>
+            <PropertyRef Name="ArgumentClassID" />
+          </Key>
+          <Property Name="ArgumentClassID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ArgumentClassName" Type="nvarchar" MaxLength="200" />
+          <Property Name="MaxNumberClass" Type="int" />
+          <Property Name="MaxNumberCatData" Type="int" />
+          <Property Name="OrderByValue" Type="int" />
+          <Property Name="Effective" Type="char" MaxLength="1" />
+          <Property Name="DelStatus" Type="char" MaxLength="1" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Arguments">
+          <Key>
+            <PropertyRef Name="ArgumentClassID" />
+            <PropertyRef Name="ArgumentID" />
+          </Key>
+          <Property Name="ArgumentClassID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ArgumentID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ArgumentValue" Type="nvarchar" MaxLength="200" />
+          <Property Name="MaxNumber" Type="int" />
+          <Property Name="OrderByValue" Type="int" />
+          <Property Name="DelStatus" Type="char" MaxLength="1" />
+          <Property Name="Effective" Type="char" MaxLength="1" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Attachments">
+          <Key>
+            <PropertyRef Name="TargetRelationID" />
+          </Key>
+          <Property Name="TargetRelationID" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="SourceRelationID" Type="varchar" MaxLength="36" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SubFileName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="FileSize" Type="int" />
+          <Property Name="FileContent" Type="image" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'ODB_DTS.dbo.OTB_SYS_Authorize' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="OTB_SYS_Authorize">
+          <Key>
+            <PropertyRef Name="RuleID" />
+            <PropertyRef Name="ProgramID" />
+          </Key>
+          <Property Name="RuleID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProgramID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="AllowRight" Type="varchar" MaxLength="200" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Departments">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="DepartmentShortName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ChiefOfDepartmentID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LevelOfDepartment" Type="int" />
+          <Property Name="NameOfLevel" Type="nvarchar" MaxLength="10" />
+          <Property Name="ParentDepartmentID" Type="varchar" MaxLength="10" />
+          <Property Name="OrderByValue" Type="int" />
+          <Property Name="Effective" Type="char" MaxLength="1" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="DelStatus" Type="char" MaxLength="1" />
+          <Property Name="CustomerType" Type="varchar" MaxLength="200" />
+          <Property Name="IsOutside" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Document">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="200" />
+          <Property Name="FileNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="CFName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EFName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubFileName" Type="varchar" MaxLength="10" />
+          <Property Name="SightTitle" Type="nvarchar" MaxLength="20" />
+          <Property Name="SightContent" Type="nvarchar" MaxLength="200" />
+          <Property Name="SightKeyWord" Type="nvarchar" MaxLength="200" />
+          <Property Name="FileRoot" Type="nvarchar" MaxLength="200" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="FileSize" Type="int" />
+          <Property Name="PixelW" Type="int" />
+          <Property Name="PixelH" Type="int" />
+          <Property Name="FileContent" Type="text" />
+          <Property Name="IsProtected" Type="nvarchar" MaxLength="1" />
+          <Property Name="IsPublic" Type="nvarchar" MaxLength="1" />
+          <Property Name="Memo" Type="ntext" />
+          <Property Name="FileCreateDate" Type="datetime" />
+          <Property Name="CreateUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Document_Temp">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="200" />
+          <Property Name="FileNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="CFName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EFName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubFileName" Type="varchar" MaxLength="10" />
+          <Property Name="SightTitle" Type="nvarchar" MaxLength="20" />
+          <Property Name="SightContent" Type="nvarchar" MaxLength="200" />
+          <Property Name="SightKeyWord" Type="nvarchar" MaxLength="200" />
+          <Property Name="FileRoot" Type="nvarchar" MaxLength="200" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="FileSize" Type="int" />
+          <Property Name="PixelW" Type="int" />
+          <Property Name="PixelH" Type="int" />
+          <Property Name="FileContent" Type="text" />
+          <Property Name="IsProtected" Type="nvarchar" MaxLength="1" />
+          <Property Name="IsPublic" Type="nvarchar" MaxLength="1" />
+          <Property Name="Memo" Type="ntext" />
+          <Property Name="FileCreateDate" Type="datetime" />
+          <Property Name="CreateUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Document_Trash">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="200" />
+          <Property Name="FileNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="CFName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EFName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubFileName" Type="varchar" MaxLength="10" />
+          <Property Name="SightTitle" Type="nvarchar" MaxLength="20" />
+          <Property Name="SightContent" Type="nvarchar" MaxLength="200" />
+          <Property Name="SightKeyWord" Type="nvarchar" MaxLength="200" />
+          <Property Name="FileRoot" Type="nvarchar" MaxLength="200" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="FileSize" Type="int" />
+          <Property Name="PixelW" Type="int" />
+          <Property Name="PixelH" Type="int" />
+          <Property Name="FileContent" Type="text" />
+          <Property Name="IsProtected" Type="nvarchar" MaxLength="1" />
+          <Property Name="IsPublic" Type="nvarchar" MaxLength="1" />
+          <Property Name="Memo" Type="ntext" />
+          <Property Name="FileCreateDate" Type="datetime" />
+          <Property Name="CreateUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'ODB_DTS.dbo.OTB_SYS_DropDownList' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="OTB_SYS_DropDownList">
+          <Property Name="DropListName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DropListCName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DropListDescript" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DropListSQL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DropListTop" Type="nvarchar" MaxLength="10" />
+          <Property Name="DropListWhere" Type="nvarchar" MaxLength="300" />
+          <Property Name="DropListOrder" Type="nvarchar" MaxLength="300" />
+          <Property Name="DropListType" Type="nvarchar" MaxLength="2" />
+          <Property Name="DropListPK_Field" Type="nvarchar" MaxLength="200" />
+        </EntityType>-->
+        <EntityType Name="OTB_SYS_Email">
+          <Key>
+            <PropertyRef Name="EmailID" />
+          </Key>
+          <Property Name="EmailID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="10" />
+          <Property Name="EmailName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailDescript" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmailSubject" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="BodyHtml" Type="nvarchar(max)" />
+          <Property Name="BodyHtml_tw" Type="nvarchar(max)" />
+          <Property Name="BodyHtml_cn" Type="nvarchar(max)" />
+          <Property Name="Variable" Type="nvarchar" MaxLength="500" />
+          <Property Name="BCC" Type="nvarchar" MaxLength="200" />
+          <Property Name="Refemail" Type="nvarchar" MaxLength="100" />
+          <Property Name="chkdul" Type="varchar" MaxLength="10" />
+          <Property Name="Notification" Type="smallint" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Emaillog">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="EmailID" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MsgID" Type="nvarchar(max)" />
+          <Property Name="UserID" Type="varchar" MaxLength="25" />
+          <Property Name="PaxCD" Type="varchar" MaxLength="50" />
+          <Property Name="mailto" Type="nvarchar" MaxLength="200" />
+          <Property Name="mailsubject" Type="nvarchar" MaxLength="200" />
+          <Property Name="mailmsg" Type="nvarchar(max)" />
+          <Property Name="maildatetime" Type="smalldatetime" />
+          <Property Name="StatusCode" Type="varchar" MaxLength="5" />
+          <Property Name="Success" Type="bit" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_EmaillogTemp">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="EmailID" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MsgID" Type="nvarchar(max)" />
+          <Property Name="UserID" Type="varchar" MaxLength="25" />
+          <Property Name="PaxCD" Type="varchar" MaxLength="50" />
+          <Property Name="mailto" Type="nvarchar" MaxLength="200" />
+          <Property Name="mailsubject" Type="nvarchar" MaxLength="200" />
+          <Property Name="mailmsg" Type="nvarchar(max)" />
+          <Property Name="maildatetime" Type="smalldatetime" />
+          <Property Name="StatusCode" Type="varchar" MaxLength="5" />
+          <Property Name="Success" Type="bit" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_EmailSetting">
+          <Key>
+            <PropertyRef Name="EmailID" />
+          </Key>
+          <Property Name="EmailID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SmtpHost" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassWord" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShowAddreess" Type="nvarchar" MaxLength="50" />
+          <Property Name="Port" Type="int" />
+          <Property Name="TimeOut" Type="int" />
+          <Property Name="EnableSSL" Type="varchar" MaxLength="10" />
+          <Property Name="AnonymousAuthentication" Type="varchar" MaxLength="10" />
+          <Property Name="MailEncoding" Type="varchar" MaxLength="10" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="Effective" Type="char" MaxLength="1" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'ODB_DTS.dbo.OTB_SYS_Log' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="OTB_SYS_Log">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Thread" />
+            <PropertyRef Name="Level" />
+            <PropertyRef Name="Logger" />
+            <PropertyRef Name="Message" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Thread" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Level" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Logger" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="4000" Nullable="false" />
+          <Property Name="Exception" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'ODB_DTS.dbo.OTB_SYS_MaxNumber' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="OTB_SYS_MaxNumber">
+          <Key>
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="CountYear" />
+            <PropertyRef Name="CountMonth" />
+            <PropertyRef Name="CountDay" />
+          </Key>
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CountYear" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CountMonth" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="CountDay" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="CountMax" Type="int" />
+          <Property Name="Memo" Type="ntext" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_MembersBase">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="nvarchar" MaxLength="18" Nullable="false" />
+          <Property Name="MemberPwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="MemberName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContectEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contect" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContectTEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContectExt" Type="nvarchar" MaxLength="20" />
+          <Property Name="ContectFax" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContectCell" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContectAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="ArriveDate" Type="datetime" />
+          <Property Name="JobtitleID" Type="nvarchar" MaxLength="10" />
+          <Property Name="DeptID" Type="varchar" MaxLength="10" />
+          <Property Name="Ext" Type="varchar" MaxLength="10" />
+          <Property Name="LeaveDate" Type="datetime" />
+          <Property Name="CalColor" Type="nvarchar" MaxLength="20" />
+          <Property Name="Effective" Type="varchar" MaxLength="1" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_MembersToRule">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="RuleID" />
+          </Key>
+          <Property Name="MemberID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RuleID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'ODB_DTS.dbo.OTB_SYS_ModuleList' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="OTB_SYS_ModuleList">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+            <PropertyRef Name="ParentID" />
+          </Key>
+          <Property Name="ModuleID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ModuleName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParentID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ClassCount" Type="int" />
+          <Property Name="OrderByValue" Type="int" />
+          <Property Name="BgCss" Type="varchar" MaxLength="50" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'ODB_DTS.dbo.OTB_SYS_PersonalGridManage' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="OTB_SYS_PersonalGridManage">
+          <Key>
+            <PropertyRef Name="Grid_Id" />
+            <PropertyRef Name="CreateUser" />
+          </Key>
+          <Property Name="Grid_Id" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="GridTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="PageName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DataField" Type="nvarchar" MaxLength="500" />
+          <Property Name="FieldName" Type="nvarchar" MaxLength="500" />
+          <Property Name="QueryField" Type="nvarchar" MaxLength="500" />
+          <Property Name="QueryName" Type="nvarchar" MaxLength="500" />
+          <Property Name="QueryType" Type="nvarchar" MaxLength="200" />
+          <Property Name="QueryDefault" Type="nvarchar" MaxLength="4000" />
+          <Property Name="QueryWidth" Type="nvarchar" MaxLength="500" />
+          <Property Name="GridSetting" Type="nvarchar" MaxLength="500" />
+          <Property Name="sort_Order" Type="varchar" MaxLength="500" />
+          <Property Name="sort" Type="varchar" MaxLength="500" />
+          <Property Name="columnWidth" Type="nvarchar" MaxLength="500" />
+          <Property Name="columnAlign" Type="nvarchar" MaxLength="500" />
+          <Property Name="queryCondition" Type="nvarchar" MaxLength="500" />
+          <Property Name="Type" Type="nvarchar" MaxLength="500" />
+          <Property Name="Effective" Type="char" MaxLength="1" />
+          <Property Name="limitCount" Type="int" />
+          <Property Name="Pager" Type="int" />
+          <Property Name="GoToUrl" Type="nvarchar" MaxLength="1000" />
+          <Property Name="GoToParam" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CreateUser" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_ProgramList">
+          <Key>
+            <PropertyRef Name="ProgramID" />
+          </Key>
+          <Property Name="ProgramID" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ProgramName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModuleID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImgPath" Type="nvarchar" MaxLength="500" />
+          <Property Name="AllowRight" Type="varchar" MaxLength="200" />
+          <Property Name="OrderByValue" Type="int" />
+          <Property Name="ProgramType" Type="varchar" MaxLength="1" />
+          <Property Name="BgCss" Type="varchar" MaxLength="50" />
+          <Property Name="grouptag" Type="nvarchar" MaxLength="200" />
+          <Property Name="Effective" Type="char" MaxLength="1" />
+          <Property Name="ShowInList" Type="char" MaxLength="1" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="MainTableName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Rules">
+          <Key>
+            <PropertyRef Name="RuleID" />
+          </Key>
+          <Property Name="RuleID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="RuleName" Type="nvarchar" MaxLength="200" />
+          <Property Name="DelStatus" Type="char" MaxLength="1" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_SystemSetting">
+          <Key>
+            <PropertyRef Name="SettingItem" />
+          </Key>
+          <Property Name="SettingItem" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SettingDescription" Type="nvarchar" MaxLength="100" />
+          <Property Name="SettingValue" Type="nvarchar" MaxLength="400" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="Effective" Type="char" MaxLength="1" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyUser" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'ODB_DTS.dbo.OTB_SYS_TableDirectory' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="OTB_SYS_TableDirectory">
+          <Key>
+            <PropertyRef Name="form_id" />
+            <PropertyRef Name="data_field" />
+            <PropertyRef Name="data_lock" />
+            <PropertyRef Name="data_dcontrol" />
+            <PropertyRef Name="link_join" />
+            <PropertyRef Name="data_updown" />
+            <PropertyRef Name="data_mask_included" />
+            <PropertyRef Name="SEQ_FG" />
+            <PropertyRef Name="AUTO_SQ" />
+          </Key>
+          <Property Name="form_id" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="page_no" Type="smallint" />
+          <Property Name="data_field" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="data_label" Type="nvarchar" MaxLength="30" />
+          <Property Name="data_size" Type="smallint" />
+          <Property Name="data_slabel" Type="nvarchar" MaxLength="18" />
+          <Property Name="data_type" Type="nvarchar" MaxLength="20" />
+          <Property Name="is_key" Type="char" MaxLength="1" />
+          <Property Name="is_nullable" Type="char" MaxLength="2" />
+          <Property Name="data_lock" Type="bit" Nullable="false" />
+          <Property Name="data_default" Type="nvarchar" MaxLength="60" />
+          <Property Name="data_process" Type="nvarchar" MaxLength="10" />
+          <Property Name="data_check" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_help_msg" Type="nvarchar" MaxLength="70" />
+          <Property Name="link_tb" Type="nvarchar" MaxLength="25" />
+          <Property Name="link_field" Type="nvarchar" MaxLength="30" />
+          <Property Name="dhelp_form" Type="nvarchar" MaxLength="30" />
+          <Property Name="link_index" Type="nvarchar" MaxLength="30" />
+          <Property Name="data_control" Type="nvarchar" MaxLength="2" />
+          <Property Name="data_control_idx" Type="smallint" />
+          <Property Name="data_control_value" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_seqno" Type="int" />
+          <Property Name="data_dcontrol" Type="bit" Nullable="false" />
+          <Property Name="link_proc" Type="nvarchar" MaxLength="20" />
+          <Property Name="link_join" Type="bit" Nullable="false" />
+          <Property Name="linked_field" Type="nvarchar" MaxLength="30" />
+          <Property Name="data_control_width" Type="smallint" />
+          <Property Name="data_control_left" Type="smallint" />
+          <Property Name="data_input_mask" Type="nvarchar" MaxLength="20" />
+          <Property Name="data_updown" Type="bit" Nullable="false" />
+          <Property Name="data_mask_included" Type="bit" Nullable="false" />
+          <Property Name="data_control_top" Type="smallint" />
+          <Property Name="data_control_height" Type="smallint" />
+          <Property Name="data_label_height" Type="smallint" />
+          <Property Name="data_label_top" Type="smallint" />
+          <Property Name="data_label_width" Type="smallint" />
+          <Property Name="data_label_left" Type="smallint" />
+          <Property Name="data_control_svalue" Type="nvarchar(max)" />
+          <Property Name="data_decm" Type="smallint" />
+          <Property Name="SEQ_FG" Type="bit" Nullable="false" />
+          <Property Name="AUTO_SQ" Type="bit" Nullable="false" />
+          <Property Name="CN_data_size" Type="smallint" />
+          <Property Name="CN_data_decm" Type="smallint" />
+        </EntityType>
+        <EntityContainer Name="ODB_DTSModelStoreContainer">
+          <EntitySet Name="OTB_SYS_ArgumentClass" EntityType="Self.OTB_SYS_ArgumentClass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Arguments" EntityType="Self.OTB_SYS_Arguments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Attachments" EntityType="Self.OTB_SYS_Attachments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Departments" EntityType="Self.OTB_SYS_Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Document" EntityType="Self.OTB_SYS_Document" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Document_Temp" EntityType="Self.OTB_SYS_Document_Temp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Document_Trash" EntityType="Self.OTB_SYS_Document_Trash" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Email" EntityType="Self.OTB_SYS_Email" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Emaillog" EntityType="Self.OTB_SYS_Emaillog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_EmaillogTemp" EntityType="Self.OTB_SYS_EmaillogTemp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_EmailSetting" EntityType="Self.OTB_SYS_EmailSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_MembersBase" EntityType="Self.OTB_SYS_MembersBase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_MembersToRule" EntityType="Self.OTB_SYS_MembersToRule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_ProgramList" EntityType="Self.OTB_SYS_ProgramList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Rules" EntityType="Self.OTB_SYS_Rules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_SystemSetting" EntityType="Self.OTB_SYS_SystemSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTB_SYS_Authorize" EntityType="Self.OTB_SYS_Authorize" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OTB_SYS_Authorize].[RuleID] AS [RuleID], 
+    [OTB_SYS_Authorize].[ProgramID] AS [ProgramID], 
+    [OTB_SYS_Authorize].[AllowRight] AS [AllowRight], 
+    [OTB_SYS_Authorize].[Memo] AS [Memo], 
+    [OTB_SYS_Authorize].[CreateUser] AS [CreateUser], 
+    [OTB_SYS_Authorize].[CreateDate] AS [CreateDate], 
+    [OTB_SYS_Authorize].[ModifyUser] AS [ModifyUser], 
+    [OTB_SYS_Authorize].[ModifyDate] AS [ModifyDate]
+    FROM [dbo].[OTB_SYS_Authorize] AS [OTB_SYS_Authorize]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OTB_SYS_Log" EntityType="Self.OTB_SYS_Log" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OTB_SYS_Log].[Id] AS [Id], 
+    [OTB_SYS_Log].[Date] AS [Date], 
+    [OTB_SYS_Log].[Thread] AS [Thread], 
+    [OTB_SYS_Log].[Level] AS [Level], 
+    [OTB_SYS_Log].[Logger] AS [Logger], 
+    [OTB_SYS_Log].[Message] AS [Message], 
+    [OTB_SYS_Log].[Exception] AS [Exception]
+    FROM [dbo].[OTB_SYS_Log] AS [OTB_SYS_Log]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OTB_SYS_MaxNumber" EntityType="Self.OTB_SYS_MaxNumber" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OTB_SYS_MaxNumber].[Type] AS [Type], 
+    [OTB_SYS_MaxNumber].[CountYear] AS [CountYear], 
+    [OTB_SYS_MaxNumber].[CountMonth] AS [CountMonth], 
+    [OTB_SYS_MaxNumber].[CountDay] AS [CountDay], 
+    [OTB_SYS_MaxNumber].[CountMax] AS [CountMax], 
+    [OTB_SYS_MaxNumber].[Memo] AS [Memo], 
+    [OTB_SYS_MaxNumber].[CreateUser] AS [CreateUser], 
+    [OTB_SYS_MaxNumber].[CreateDate] AS [CreateDate], 
+    [OTB_SYS_MaxNumber].[ModifyUser] AS [ModifyUser], 
+    [OTB_SYS_MaxNumber].[ModifyDate] AS [ModifyDate]
+    FROM [dbo].[OTB_SYS_MaxNumber] AS [OTB_SYS_MaxNumber]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OTB_SYS_ModuleList" EntityType="Self.OTB_SYS_ModuleList" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OTB_SYS_ModuleList].[ModuleID] AS [ModuleID], 
+    [OTB_SYS_ModuleList].[ModuleName] AS [ModuleName], 
+    [OTB_SYS_ModuleList].[ParentID] AS [ParentID], 
+    [OTB_SYS_ModuleList].[ClassCount] AS [ClassCount], 
+    [OTB_SYS_ModuleList].[OrderByValue] AS [OrderByValue], 
+    [OTB_SYS_ModuleList].[BgCss] AS [BgCss], 
+    [OTB_SYS_ModuleList].[Memo] AS [Memo], 
+    [OTB_SYS_ModuleList].[CreateUser] AS [CreateUser], 
+    [OTB_SYS_ModuleList].[CreateDate] AS [CreateDate], 
+    [OTB_SYS_ModuleList].[ModifyUser] AS [ModifyUser], 
+    [OTB_SYS_ModuleList].[ModifyDate] AS [ModifyDate]
+    FROM [dbo].[OTB_SYS_ModuleList] AS [OTB_SYS_ModuleList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OTB_SYS_PersonalGridManage" EntityType="Self.OTB_SYS_PersonalGridManage" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OTB_SYS_PersonalGridManage].[Grid_Id] AS [Grid_Id], 
+    [OTB_SYS_PersonalGridManage].[GridTitle] AS [GridTitle], 
+    [OTB_SYS_PersonalGridManage].[PageName] AS [PageName], 
+    [OTB_SYS_PersonalGridManage].[TableName] AS [TableName], 
+    [OTB_SYS_PersonalGridManage].[DataField] AS [DataField], 
+    [OTB_SYS_PersonalGridManage].[FieldName] AS [FieldName], 
+    [OTB_SYS_PersonalGridManage].[QueryField] AS [QueryField], 
+    [OTB_SYS_PersonalGridManage].[QueryName] AS [QueryName], 
+    [OTB_SYS_PersonalGridManage].[QueryType] AS [QueryType], 
+    [OTB_SYS_PersonalGridManage].[QueryDefault] AS [QueryDefault], 
+    [OTB_SYS_PersonalGridManage].[QueryWidth] AS [QueryWidth], 
+    [OTB_SYS_PersonalGridManage].[GridSetting] AS [GridSetting], 
+    [OTB_SYS_PersonalGridManage].[sort_Order] AS [sort_Order], 
+    [OTB_SYS_PersonalGridManage].[sort] AS [sort], 
+    [OTB_SYS_PersonalGridManage].[columnWidth] AS [columnWidth], 
+    [OTB_SYS_PersonalGridManage].[columnAlign] AS [columnAlign], 
+    [OTB_SYS_PersonalGridManage].[queryCondition] AS [queryCondition], 
+    [OTB_SYS_PersonalGridManage].[Type] AS [Type], 
+    [OTB_SYS_PersonalGridManage].[Effective] AS [Effective], 
+    [OTB_SYS_PersonalGridManage].[limitCount] AS [limitCount], 
+    [OTB_SYS_PersonalGridManage].[Pager] AS [Pager], 
+    [OTB_SYS_PersonalGridManage].[GoToUrl] AS [GoToUrl], 
+    [OTB_SYS_PersonalGridManage].[GoToParam] AS [GoToParam], 
+    [OTB_SYS_PersonalGridManage].[CreateUser] AS [CreateUser], 
+    [OTB_SYS_PersonalGridManage].[CreateDate] AS [CreateDate], 
+    [OTB_SYS_PersonalGridManage].[ModifyUser] AS [ModifyUser], 
+    [OTB_SYS_PersonalGridManage].[ModifyDate] AS [ModifyDate]
+    FROM [dbo].[OTB_SYS_PersonalGridManage] AS [OTB_SYS_PersonalGridManage]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OTB_SYS_TableDirectory" EntityType="Self.OTB_SYS_TableDirectory" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OTB_SYS_TableDirectory].[form_id] AS [form_id], 
+    [OTB_SYS_TableDirectory].[page_no] AS [page_no], 
+    [OTB_SYS_TableDirectory].[data_field] AS [data_field], 
+    [OTB_SYS_TableDirectory].[data_label] AS [data_label], 
+    [OTB_SYS_TableDirectory].[data_size] AS [data_size], 
+    [OTB_SYS_TableDirectory].[data_slabel] AS [data_slabel], 
+    [OTB_SYS_TableDirectory].[data_type] AS [data_type], 
+    [OTB_SYS_TableDirectory].[is_key] AS [is_key], 
+    [OTB_SYS_TableDirectory].[is_nullable] AS [is_nullable], 
+    [OTB_SYS_TableDirectory].[data_lock] AS [data_lock], 
+    [OTB_SYS_TableDirectory].[data_default] AS [data_default], 
+    [OTB_SYS_TableDirectory].[data_process] AS [data_process], 
+    [OTB_SYS_TableDirectory].[data_check] AS [data_check], 
+    [OTB_SYS_TableDirectory].[data_help_msg] AS [data_help_msg], 
+    [OTB_SYS_TableDirectory].[link_tb] AS [link_tb], 
+    [OTB_SYS_TableDirectory].[link_field] AS [link_field], 
+    [OTB_SYS_TableDirectory].[dhelp_form] AS [dhelp_form], 
+    [OTB_SYS_TableDirectory].[link_index] AS [link_index], 
+    [OTB_SYS_TableDirectory].[data_control] AS [data_control], 
+    [OTB_SYS_TableDirectory].[data_control_idx] AS [data_control_idx], 
+    [OTB_SYS_TableDirectory].[data_control_value] AS [data_control_value], 
+    [OTB_SYS_TableDirectory].[data_seqno] AS [data_seqno], 
+    [OTB_SYS_TableDirectory].[data_dcontrol] AS [data_dcontrol], 
+    [OTB_SYS_TableDirectory].[link_proc] AS [link_proc], 
+    [OTB_SYS_TableDirectory].[link_join] AS [link_join], 
+    [OTB_SYS_TableDirectory].[linked_field] AS [linked_field], 
+    [OTB_SYS_TableDirectory].[data_control_width] AS [data_control_width], 
+    [OTB_SYS_TableDirectory].[data_control_left] AS [data_control_left], 
+    [OTB_SYS_TableDirectory].[data_input_mask] AS [data_input_mask], 
+    [OTB_SYS_TableDirectory].[data_updown] AS [data_updown], 
+    [OTB_SYS_TableDirectory].[data_mask_included] AS [data_mask_included], 
+    [OTB_SYS_TableDirectory].[data_control_top] AS [data_control_top], 
+    [OTB_SYS_TableDirectory].[data_control_height] AS [data_control_height], 
+    [OTB_SYS_TableDirectory].[data_label_height] AS [data_label_height], 
+    [OTB_SYS_TableDirectory].[data_label_top] AS [data_label_top], 
+    [OTB_SYS_TableDirectory].[data_label_width] AS [data_label_width], 
+    [OTB_SYS_TableDirectory].[data_label_left] AS [data_label_left], 
+    [OTB_SYS_TableDirectory].[data_control_svalue] AS [data_control_svalue], 
+    [OTB_SYS_TableDirectory].[data_decm] AS [data_decm], 
+    [OTB_SYS_TableDirectory].[SEQ_FG] AS [SEQ_FG], 
+    [OTB_SYS_TableDirectory].[AUTO_SQ] AS [AUTO_SQ], 
+    [OTB_SYS_TableDirectory].[CN_data_size] AS [CN_data_size], 
+    [OTB_SYS_TableDirectory].[CN_data_decm] AS [CN_data_decm]
+    FROM [dbo].[OTB_SYS_TableDirectory] AS [OTB_SYS_TableDirectory]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ODB_DTSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OTB_SYS_ArgumentClass">
+          <Key>
+            <PropertyRef Name="ArgumentClassID" />
+          </Key>
+          <Property Name="ArgumentClassID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ArgumentClassName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MaxNumberClass" Type="Int32" />
+          <Property Name="MaxNumberCatData" Type="Int32" />
+          <Property Name="OrderByValue" Type="Int32" />
+          <Property Name="Effective" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DelStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Arguments">
+          <Key>
+            <PropertyRef Name="ArgumentClassID" />
+            <PropertyRef Name="ArgumentID" />
+          </Key>
+          <Property Name="ArgumentClassID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ArgumentID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArgumentValue" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MaxNumber" Type="Int32" />
+          <Property Name="OrderByValue" Type="Int32" />
+          <Property Name="DelStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Effective" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Attachments">
+          <Key>
+            <PropertyRef Name="TargetRelationID" />
+          </Key>
+          <Property Name="TargetRelationID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SourceRelationID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FileSize" Type="Int32" />
+          <Property Name="FileContent" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Departments">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DepartmentShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ChiefOfDepartmentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LevelOfDepartment" Type="Int32" />
+          <Property Name="NameOfLevel" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ParentDepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OrderByValue" Type="Int32" />
+          <Property Name="Effective" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="DelStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CustomerType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsOutside" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Document">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CFName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EFName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubFileName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SightTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SightContent" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SightKeyWord" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FileRoot" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FileSize" Type="Int32" />
+          <Property Name="PixelW" Type="Int32" />
+          <Property Name="PixelH" Type="Int32" />
+          <Property Name="FileContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsProtected" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="IsPublic" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileCreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Document_Temp">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CFName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EFName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubFileName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SightTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SightContent" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SightKeyWord" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FileRoot" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FileSize" Type="Int32" />
+          <Property Name="PixelW" Type="Int32" />
+          <Property Name="PixelH" Type="Int32" />
+          <Property Name="FileContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsProtected" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="IsPublic" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileCreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Document_Trash">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CFName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EFName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubFileName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SightTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SightContent" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SightKeyWord" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FileRoot" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FileSize" Type="Int32" />
+          <Property Name="PixelW" Type="Int32" />
+          <Property Name="PixelH" Type="Int32" />
+          <Property Name="FileContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsProtected" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="IsPublic" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileCreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Email">
+          <Key>
+            <PropertyRef Name="EmailID" />
+          </Key>
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EmailName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailDescript" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BodyHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BodyHtml_tw" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BodyHtml_cn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Variable" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BCC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Refemail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="chkdul" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Notification" Type="Int16" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Emaillog">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="EmailID" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MsgID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PaxCD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mailto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mailsubject" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mailmsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="maildatetime" Type="DateTime" Precision="0" />
+          <Property Name="StatusCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Success" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_EmaillogTemp">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="EmailID" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MsgID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PaxCD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mailto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mailsubject" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mailmsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="maildatetime" Type="DateTime" Precision="0" />
+          <Property Name="StatusCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Success" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_EmailSetting">
+          <Key>
+            <PropertyRef Name="EmailID" />
+          </Key>
+          <Property Name="EmailID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SmtpHost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShowAddreess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Port" Type="Int32" />
+          <Property Name="TimeOut" Type="Int32" />
+          <Property Name="EnableSSL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AnonymousAuthentication" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MailEncoding" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Effective" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_MembersBase">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MemberPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContectEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContectTEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContectExt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ContectFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContectCell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContectAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="ArriveDate" Type="DateTime" Precision="3" />
+          <Property Name="JobtitleID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DeptID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LeaveDate" Type="DateTime" Precision="3" />
+          <Property Name="CalColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Effective" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_MembersToRule">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="RuleID" />
+          </Key>
+          <Property Name="MemberID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RuleID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_ProgramList">
+          <Key>
+            <PropertyRef Name="ProgramID" />
+          </Key>
+          <Property Name="ProgramID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProgramName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ModuleID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ImgPath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AllowRight" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OrderByValue" Type="Int32" />
+          <Property Name="ProgramType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BgCss" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="grouptag" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Effective" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ShowInList" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="MainTableName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Rules">
+          <Key>
+            <PropertyRef Name="RuleID" />
+          </Key>
+          <Property Name="RuleID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RuleName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DelStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_SystemSetting">
+          <Key>
+            <PropertyRef Name="SettingItem" />
+          </Key>
+          <Property Name="SettingItem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SettingDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SettingValue" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Effective" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Authorize">
+          <Key>
+            <PropertyRef Name="RuleID" />
+            <PropertyRef Name="ProgramID" />
+          </Key>
+          <Property Name="RuleID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProgramID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AllowRight" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_Log">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Thread" />
+            <PropertyRef Name="Level" />
+            <PropertyRef Name="Logger" />
+            <PropertyRef Name="Message" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Thread" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Logger" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Exception" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_MaxNumber">
+          <Key>
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="CountYear" />
+            <PropertyRef Name="CountMonth" />
+            <PropertyRef Name="CountDay" />
+          </Key>
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CountYear" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CountMonth" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CountDay" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CountMax" Type="Int32" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_ModuleList">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+            <PropertyRef Name="ParentID" />
+          </Key>
+          <Property Name="ModuleID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModuleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClassCount" Type="Int32" />
+          <Property Name="OrderByValue" Type="Int32" />
+          <Property Name="BgCss" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_PersonalGridManage">
+          <Key>
+            <PropertyRef Name="Grid_Id" />
+            <PropertyRef Name="CreateUser" />
+          </Key>
+          <Property Name="Grid_Id" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="GridTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TableName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DataField" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FieldName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="QueryField" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="QueryName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="QueryType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="QueryDefault" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="QueryWidth" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GridSetting" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="sort_Order" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sort" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="columnWidth" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="columnAlign" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="queryCondition" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Effective" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="limitCount" Type="Int32" />
+          <Property Name="Pager" Type="Int32" />
+          <Property Name="GoToUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="GoToParam" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTB_SYS_TableDirectory">
+          <Key>
+            <PropertyRef Name="form_id" />
+            <PropertyRef Name="data_field" />
+            <PropertyRef Name="data_lock" />
+            <PropertyRef Name="data_dcontrol" />
+            <PropertyRef Name="link_join" />
+            <PropertyRef Name="data_updown" />
+            <PropertyRef Name="data_mask_included" />
+            <PropertyRef Name="SEQ_FG" />
+            <PropertyRef Name="AUTO_SQ" />
+          </Key>
+          <Property Name="form_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="page_no" Type="Int16" />
+          <Property Name="data_field" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="data_label" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="data_size" Type="Int16" />
+          <Property Name="data_slabel" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Name="data_type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="is_key" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="is_nullable" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="data_lock" Type="Boolean" Nullable="false" />
+          <Property Name="data_default" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="data_process" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="data_check" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_help_msg" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="link_tb" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="link_field" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="dhelp_form" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="link_index" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="data_control" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="data_control_idx" Type="Int16" />
+          <Property Name="data_control_value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_seqno" Type="Int32" />
+          <Property Name="data_dcontrol" Type="Boolean" Nullable="false" />
+          <Property Name="link_proc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="link_join" Type="Boolean" Nullable="false" />
+          <Property Name="linked_field" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="data_control_width" Type="Int16" />
+          <Property Name="data_control_left" Type="Int16" />
+          <Property Name="data_input_mask" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="data_updown" Type="Boolean" Nullable="false" />
+          <Property Name="data_mask_included" Type="Boolean" Nullable="false" />
+          <Property Name="data_control_top" Type="Int16" />
+          <Property Name="data_control_height" Type="Int16" />
+          <Property Name="data_label_height" Type="Int16" />
+          <Property Name="data_label_top" Type="Int16" />
+          <Property Name="data_label_width" Type="Int16" />
+          <Property Name="data_label_left" Type="Int16" />
+          <Property Name="data_control_svalue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="data_decm" Type="Int16" />
+          <Property Name="SEQ_FG" Type="Boolean" Nullable="false" />
+          <Property Name="AUTO_SQ" Type="Boolean" Nullable="false" />
+          <Property Name="CN_data_size" Type="Int16" />
+          <Property Name="CN_data_decm" Type="Int16" />
+        </EntityType>
+        <EntityContainer Name="ODB_DTSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OTB_SYS_ArgumentClass" EntityType="Self.OTB_SYS_ArgumentClass" />
+          <EntitySet Name="OTB_SYS_Arguments" EntityType="Self.OTB_SYS_Arguments" />
+          <EntitySet Name="OTB_SYS_Attachments" EntityType="Self.OTB_SYS_Attachments" />
+          <EntitySet Name="OTB_SYS_Departments" EntityType="Self.OTB_SYS_Departments" />
+          <EntitySet Name="OTB_SYS_Document" EntityType="Self.OTB_SYS_Document" />
+          <EntitySet Name="OTB_SYS_Document_Temp" EntityType="Self.OTB_SYS_Document_Temp" />
+          <EntitySet Name="OTB_SYS_Document_Trash" EntityType="Self.OTB_SYS_Document_Trash" />
+          <EntitySet Name="OTB_SYS_Email" EntityType="Self.OTB_SYS_Email" />
+          <EntitySet Name="OTB_SYS_Emaillog" EntityType="Self.OTB_SYS_Emaillog" />
+          <EntitySet Name="OTB_SYS_EmaillogTemp" EntityType="Self.OTB_SYS_EmaillogTemp" />
+          <EntitySet Name="OTB_SYS_EmailSetting" EntityType="Self.OTB_SYS_EmailSetting" />
+          <EntitySet Name="OTB_SYS_MembersBase" EntityType="Self.OTB_SYS_MembersBase" />
+          <EntitySet Name="OTB_SYS_MembersToRule" EntityType="Self.OTB_SYS_MembersToRule" />
+          <EntitySet Name="OTB_SYS_ProgramList" EntityType="Self.OTB_SYS_ProgramList" />
+          <EntitySet Name="OTB_SYS_Rules" EntityType="Self.OTB_SYS_Rules" />
+          <EntitySet Name="OTB_SYS_SystemSetting" EntityType="Self.OTB_SYS_SystemSetting" />
+          <EntitySet Name="OTB_SYS_Authorize" EntityType="Self.OTB_SYS_Authorize" />
+          <EntitySet Name="OTB_SYS_Log" EntityType="Self.OTB_SYS_Log" />
+          <EntitySet Name="OTB_SYS_MaxNumber" EntityType="Self.OTB_SYS_MaxNumber" />
+          <EntitySet Name="OTB_SYS_ModuleList" EntityType="Self.OTB_SYS_ModuleList" />
+          <EntitySet Name="OTB_SYS_PersonalGridManage" EntityType="Self.OTB_SYS_PersonalGridManage" />
+          <EntitySet Name="OTB_SYS_TableDirectory" EntityType="Self.OTB_SYS_TableDirectory" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ODB_DTSModelStoreContainer" CdmEntityContainer="ODB_DTSEntities">
+          <EntitySetMapping Name="OTB_SYS_ArgumentClass">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_ArgumentClass">
+              <MappingFragment StoreEntitySet="OTB_SYS_ArgumentClass">
+                <ScalarProperty Name="ArgumentClassID" ColumnName="ArgumentClassID" />
+                <ScalarProperty Name="ArgumentClassName" ColumnName="ArgumentClassName" />
+                <ScalarProperty Name="MaxNumberClass" ColumnName="MaxNumberClass" />
+                <ScalarProperty Name="MaxNumberCatData" ColumnName="MaxNumberCatData" />
+                <ScalarProperty Name="OrderByValue" ColumnName="OrderByValue" />
+                <ScalarProperty Name="Effective" ColumnName="Effective" />
+                <ScalarProperty Name="DelStatus" ColumnName="DelStatus" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Arguments">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Arguments">
+              <MappingFragment StoreEntitySet="OTB_SYS_Arguments">
+                <ScalarProperty Name="ArgumentClassID" ColumnName="ArgumentClassID" />
+                <ScalarProperty Name="ArgumentID" ColumnName="ArgumentID" />
+                <ScalarProperty Name="ArgumentValue" ColumnName="ArgumentValue" />
+                <ScalarProperty Name="MaxNumber" ColumnName="MaxNumber" />
+                <ScalarProperty Name="OrderByValue" ColumnName="OrderByValue" />
+                <ScalarProperty Name="DelStatus" ColumnName="DelStatus" />
+                <ScalarProperty Name="Effective" ColumnName="Effective" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Attachments">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Attachments">
+              <MappingFragment StoreEntitySet="OTB_SYS_Attachments">
+                <ScalarProperty Name="TargetRelationID" ColumnName="TargetRelationID" />
+                <ScalarProperty Name="SourceRelationID" ColumnName="SourceRelationID" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="SubFileName" ColumnName="SubFileName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Departments">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Departments">
+              <MappingFragment StoreEntitySet="OTB_SYS_Departments">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="DepartmentShortName" ColumnName="DepartmentShortName" />
+                <ScalarProperty Name="ChiefOfDepartmentID" ColumnName="ChiefOfDepartmentID" />
+                <ScalarProperty Name="LevelOfDepartment" ColumnName="LevelOfDepartment" />
+                <ScalarProperty Name="NameOfLevel" ColumnName="NameOfLevel" />
+                <ScalarProperty Name="ParentDepartmentID" ColumnName="ParentDepartmentID" />
+                <ScalarProperty Name="OrderByValue" ColumnName="OrderByValue" />
+                <ScalarProperty Name="Effective" ColumnName="Effective" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="DelStatus" ColumnName="DelStatus" />
+                <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+                <ScalarProperty Name="IsOutside" ColumnName="IsOutside" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Document">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Document">
+              <MappingFragment StoreEntitySet="OTB_SYS_Document">
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileNumber" ColumnName="FileNumber" />
+                <ScalarProperty Name="CFName" ColumnName="CFName" />
+                <ScalarProperty Name="EFName" ColumnName="EFName" />
+                <ScalarProperty Name="SubFileName" ColumnName="SubFileName" />
+                <ScalarProperty Name="SightTitle" ColumnName="SightTitle" />
+                <ScalarProperty Name="SightContent" ColumnName="SightContent" />
+                <ScalarProperty Name="SightKeyWord" ColumnName="SightKeyWord" />
+                <ScalarProperty Name="FileRoot" ColumnName="FileRoot" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="PixelW" ColumnName="PixelW" />
+                <ScalarProperty Name="PixelH" ColumnName="PixelH" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="IsProtected" ColumnName="IsProtected" />
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="FileCreateDate" ColumnName="FileCreateDate" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Document_Temp">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Document_Temp">
+              <MappingFragment StoreEntitySet="OTB_SYS_Document_Temp">
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileNumber" ColumnName="FileNumber" />
+                <ScalarProperty Name="CFName" ColumnName="CFName" />
+                <ScalarProperty Name="EFName" ColumnName="EFName" />
+                <ScalarProperty Name="SubFileName" ColumnName="SubFileName" />
+                <ScalarProperty Name="SightTitle" ColumnName="SightTitle" />
+                <ScalarProperty Name="SightContent" ColumnName="SightContent" />
+                <ScalarProperty Name="SightKeyWord" ColumnName="SightKeyWord" />
+                <ScalarProperty Name="FileRoot" ColumnName="FileRoot" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="PixelW" ColumnName="PixelW" />
+                <ScalarProperty Name="PixelH" ColumnName="PixelH" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="IsProtected" ColumnName="IsProtected" />
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="FileCreateDate" ColumnName="FileCreateDate" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Document_Trash">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Document_Trash">
+              <MappingFragment StoreEntitySet="OTB_SYS_Document_Trash">
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileNumber" ColumnName="FileNumber" />
+                <ScalarProperty Name="CFName" ColumnName="CFName" />
+                <ScalarProperty Name="EFName" ColumnName="EFName" />
+                <ScalarProperty Name="SubFileName" ColumnName="SubFileName" />
+                <ScalarProperty Name="SightTitle" ColumnName="SightTitle" />
+                <ScalarProperty Name="SightContent" ColumnName="SightContent" />
+                <ScalarProperty Name="SightKeyWord" ColumnName="SightKeyWord" />
+                <ScalarProperty Name="FileRoot" ColumnName="FileRoot" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="PixelW" ColumnName="PixelW" />
+                <ScalarProperty Name="PixelH" ColumnName="PixelH" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="IsProtected" ColumnName="IsProtected" />
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="FileCreateDate" ColumnName="FileCreateDate" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Email">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Email">
+              <MappingFragment StoreEntitySet="OTB_SYS_Email">
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="EmailName" ColumnName="EmailName" />
+                <ScalarProperty Name="EmailDescript" ColumnName="EmailDescript" />
+                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+                <ScalarProperty Name="BodyHtml" ColumnName="BodyHtml" />
+                <ScalarProperty Name="BodyHtml_tw" ColumnName="BodyHtml_tw" />
+                <ScalarProperty Name="BodyHtml_cn" ColumnName="BodyHtml_cn" />
+                <ScalarProperty Name="Variable" ColumnName="Variable" />
+                <ScalarProperty Name="BCC" ColumnName="BCC" />
+                <ScalarProperty Name="Refemail" ColumnName="Refemail" />
+                <ScalarProperty Name="chkdul" ColumnName="chkdul" />
+                <ScalarProperty Name="Notification" ColumnName="Notification" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Emaillog">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Emaillog">
+              <MappingFragment StoreEntitySet="OTB_SYS_Emaillog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PaxCD" ColumnName="PaxCD" />
+                <ScalarProperty Name="mailto" ColumnName="mailto" />
+                <ScalarProperty Name="mailsubject" ColumnName="mailsubject" />
+                <ScalarProperty Name="mailmsg" ColumnName="mailmsg" />
+                <ScalarProperty Name="maildatetime" ColumnName="maildatetime" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="Success" ColumnName="Success" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_EmaillogTemp">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_EmaillogTemp">
+              <MappingFragment StoreEntitySet="OTB_SYS_EmaillogTemp">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PaxCD" ColumnName="PaxCD" />
+                <ScalarProperty Name="mailto" ColumnName="mailto" />
+                <ScalarProperty Name="mailsubject" ColumnName="mailsubject" />
+                <ScalarProperty Name="mailmsg" ColumnName="mailmsg" />
+                <ScalarProperty Name="maildatetime" ColumnName="maildatetime" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="Success" ColumnName="Success" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_EmailSetting">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_EmailSetting">
+              <MappingFragment StoreEntitySet="OTB_SYS_EmailSetting">
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="SmtpHost" ColumnName="SmtpHost" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="ShowAddreess" ColumnName="ShowAddreess" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+                <ScalarProperty Name="EnableSSL" ColumnName="EnableSSL" />
+                <ScalarProperty Name="AnonymousAuthentication" ColumnName="AnonymousAuthentication" />
+                <ScalarProperty Name="MailEncoding" ColumnName="MailEncoding" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="Effective" ColumnName="Effective" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_MembersBase">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_MembersBase">
+              <MappingFragment StoreEntitySet="OTB_SYS_MembersBase">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="MemberPwd" ColumnName="MemberPwd" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="ContectEmail" ColumnName="ContectEmail" />
+                <ScalarProperty Name="Contect" ColumnName="Contect" />
+                <ScalarProperty Name="ContectTEL" ColumnName="ContectTEL" />
+                <ScalarProperty Name="ContectExt" ColumnName="ContectExt" />
+                <ScalarProperty Name="ContectFax" ColumnName="ContectFax" />
+                <ScalarProperty Name="ContectCell" ColumnName="ContectCell" />
+                <ScalarProperty Name="ContectAddress" ColumnName="ContectAddress" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="ArriveDate" ColumnName="ArriveDate" />
+                <ScalarProperty Name="JobtitleID" ColumnName="JobtitleID" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="Ext" ColumnName="Ext" />
+                <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
+                <ScalarProperty Name="CalColor" ColumnName="CalColor" />
+                <ScalarProperty Name="Effective" ColumnName="Effective" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_MembersToRule">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_MembersToRule">
+              <MappingFragment StoreEntitySet="OTB_SYS_MembersToRule">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_ProgramList">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_ProgramList">
+              <MappingFragment StoreEntitySet="OTB_SYS_ProgramList">
+                <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+                <ScalarProperty Name="ProgramName" ColumnName="ProgramName" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+                <ScalarProperty Name="AllowRight" ColumnName="AllowRight" />
+                <ScalarProperty Name="OrderByValue" ColumnName="OrderByValue" />
+                <ScalarProperty Name="ProgramType" ColumnName="ProgramType" />
+                <ScalarProperty Name="BgCss" ColumnName="BgCss" />
+                <ScalarProperty Name="grouptag" ColumnName="grouptag" />
+                <ScalarProperty Name="Effective" ColumnName="Effective" />
+                <ScalarProperty Name="ShowInList" ColumnName="ShowInList" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="MainTableName" ColumnName="MainTableName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Rules">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Rules">
+              <MappingFragment StoreEntitySet="OTB_SYS_Rules">
+                <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+                <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+                <ScalarProperty Name="DelStatus" ColumnName="DelStatus" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_SystemSetting">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_SystemSetting">
+              <MappingFragment StoreEntitySet="OTB_SYS_SystemSetting">
+                <ScalarProperty Name="SettingItem" ColumnName="SettingItem" />
+                <ScalarProperty Name="SettingDescription" ColumnName="SettingDescription" />
+                <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="Effective" ColumnName="Effective" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Authorize">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Authorize">
+              <MappingFragment StoreEntitySet="OTB_SYS_Authorize">
+                <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+                <ScalarProperty Name="ProgramID" ColumnName="ProgramID" />
+                <ScalarProperty Name="AllowRight" ColumnName="AllowRight" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_Log">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_Log">
+              <MappingFragment StoreEntitySet="OTB_SYS_Log">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Thread" ColumnName="Thread" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Logger" ColumnName="Logger" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Exception" ColumnName="Exception" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_MaxNumber">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_MaxNumber">
+              <MappingFragment StoreEntitySet="OTB_SYS_MaxNumber">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CountYear" ColumnName="CountYear" />
+                <ScalarProperty Name="CountMonth" ColumnName="CountMonth" />
+                <ScalarProperty Name="CountDay" ColumnName="CountDay" />
+                <ScalarProperty Name="CountMax" ColumnName="CountMax" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_ModuleList">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_ModuleList">
+              <MappingFragment StoreEntitySet="OTB_SYS_ModuleList">
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ClassCount" ColumnName="ClassCount" />
+                <ScalarProperty Name="OrderByValue" ColumnName="OrderByValue" />
+                <ScalarProperty Name="BgCss" ColumnName="BgCss" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_PersonalGridManage">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_PersonalGridManage">
+              <MappingFragment StoreEntitySet="OTB_SYS_PersonalGridManage">
+                <ScalarProperty Name="Grid_Id" ColumnName="Grid_Id" />
+                <ScalarProperty Name="GridTitle" ColumnName="GridTitle" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="DataField" ColumnName="DataField" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="QueryField" ColumnName="QueryField" />
+                <ScalarProperty Name="QueryName" ColumnName="QueryName" />
+                <ScalarProperty Name="QueryType" ColumnName="QueryType" />
+                <ScalarProperty Name="QueryDefault" ColumnName="QueryDefault" />
+                <ScalarProperty Name="QueryWidth" ColumnName="QueryWidth" />
+                <ScalarProperty Name="GridSetting" ColumnName="GridSetting" />
+                <ScalarProperty Name="sort_Order" ColumnName="sort_Order" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="columnWidth" ColumnName="columnWidth" />
+                <ScalarProperty Name="columnAlign" ColumnName="columnAlign" />
+                <ScalarProperty Name="queryCondition" ColumnName="queryCondition" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Effective" ColumnName="Effective" />
+                <ScalarProperty Name="limitCount" ColumnName="limitCount" />
+                <ScalarProperty Name="Pager" ColumnName="Pager" />
+                <ScalarProperty Name="GoToUrl" ColumnName="GoToUrl" />
+                <ScalarProperty Name="GoToParam" ColumnName="GoToParam" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTB_SYS_TableDirectory">
+            <EntityTypeMapping TypeName="ODB_DTSModel.OTB_SYS_TableDirectory">
+              <MappingFragment StoreEntitySet="OTB_SYS_TableDirectory">
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+                <ScalarProperty Name="page_no" ColumnName="page_no" />
+                <ScalarProperty Name="data_field" ColumnName="data_field" />
+                <ScalarProperty Name="data_label" ColumnName="data_label" />
+                <ScalarProperty Name="data_size" ColumnName="data_size" />
+                <ScalarProperty Name="data_slabel" ColumnName="data_slabel" />
+                <ScalarProperty Name="data_type" ColumnName="data_type" />
+                <ScalarProperty Name="is_key" ColumnName="is_key" />
+                <ScalarProperty Name="is_nullable" ColumnName="is_nullable" />
+                <ScalarProperty Name="data_lock" ColumnName="data_lock" />
+                <ScalarProperty Name="data_default" ColumnName="data_default" />
+                <ScalarProperty Name="data_process" ColumnName="data_process" />
+                <ScalarProperty Name="data_check" ColumnName="data_check" />
+                <ScalarProperty Name="data_help_msg" ColumnName="data_help_msg" />
+                <ScalarProperty Name="link_tb" ColumnName="link_tb" />
+                <ScalarProperty Name="link_field" ColumnName="link_field" />
+                <ScalarProperty Name="dhelp_form" ColumnName="dhelp_form" />
+                <ScalarProperty Name="link_index" ColumnName="link_index" />
+                <ScalarProperty Name="data_control" ColumnName="data_control" />
+                <ScalarProperty Name="data_control_idx" ColumnName="data_control_idx" />
+                <ScalarProperty Name="data_control_value" ColumnName="data_control_value" />
+                <ScalarProperty Name="data_seqno" ColumnName="data_seqno" />
+                <ScalarProperty Name="data_dcontrol" ColumnName="data_dcontrol" />
+                <ScalarProperty Name="link_proc" ColumnName="link_proc" />
+                <ScalarProperty Name="link_join" ColumnName="link_join" />
+                <ScalarProperty Name="linked_field" ColumnName="linked_field" />
+                <ScalarProperty Name="data_control_width" ColumnName="data_control_width" />
+                <ScalarProperty Name="data_control_left" ColumnName="data_control_left" />
+                <ScalarProperty Name="data_input_mask" ColumnName="data_input_mask" />
+                <ScalarProperty Name="data_updown" ColumnName="data_updown" />
+                <ScalarProperty Name="data_mask_included" ColumnName="data_mask_included" />
+                <ScalarProperty Name="data_control_top" ColumnName="data_control_top" />
+                <ScalarProperty Name="data_control_height" ColumnName="data_control_height" />
+                <ScalarProperty Name="data_label_height" ColumnName="data_label_height" />
+                <ScalarProperty Name="data_label_top" ColumnName="data_label_top" />
+                <ScalarProperty Name="data_label_width" ColumnName="data_label_width" />
+                <ScalarProperty Name="data_label_left" ColumnName="data_label_left" />
+                <ScalarProperty Name="data_control_svalue" ColumnName="data_control_svalue" />
+                <ScalarProperty Name="data_decm" ColumnName="data_decm" />
+                <ScalarProperty Name="SEQ_FG" ColumnName="SEQ_FG" />
+                <ScalarProperty Name="AUTO_SQ" ColumnName="AUTO_SQ" />
+                <ScalarProperty Name="CN_data_size" ColumnName="CN_data_size" />
+                <ScalarProperty Name="CN_data_decm" ColumnName="CN_data_decm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

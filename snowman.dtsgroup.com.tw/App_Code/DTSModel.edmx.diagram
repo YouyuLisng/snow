@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f8444645e40f464192e1f1be50264660" Name="Diagram1" ZoomLevel="46">
+        <EntityTypeShape EntityType="DTS.Model.dtproperties" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAccount" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAgent" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAgentFile" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP10" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP10A" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP10His" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP20" Width="1.5" PointX="7.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP20A" Width="1.5" PointX="19.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP30" Width="1.5" PointX="19.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP30A" Width="1.5" PointX="19.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP60" Width="1.5" PointX="21.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP60A" Width="1.5" PointX="21.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP80A" Width="1.5" PointX="14.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAPCheck" Width="1.5" PointX="16.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAPPWA" Width="1.5" PointX="21.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblBusiness" Width="1.5" PointX="5.25" PointY="59.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblBusinessP" Width="1.5" PointX="7.5" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicAD" Width="1.5" PointX="21.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicAir" Width="1.5" PointX="23.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicAirline" Width="1.5" PointX="23.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicAirPort" Width="1.5" PointX="23.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicArea" Width="1.5" PointX="23.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicCal" Width="1.5" PointX="23.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicCat" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicChild" Width="1.5" PointX="18.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicCity" Width="1.5" PointX="23.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicContinent" Width="1.5" PointX="25.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicCountry" Width="1.5" PointX="25.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicCurrency" Width="1.5" PointX="25.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicDist" Width="1.5" PointX="25.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicEdu" Width="1.5" PointX="25.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicImage" Width="1.5" PointX="20.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicJob" Width="1.5" PointX="25.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicLocate" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicMap" Width="1.5" PointX="14.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicMarriage" Width="1.5" PointX="27.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicPlace" Width="1.5" PointX="27.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicQues" Width="1.5" PointX="27.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicRegion" Width="1.5" PointX="27.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicSchedule" Width="1.5" PointX="27.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicTranslate" Width="1.5" PointX="27.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicVisa" Width="1.5" PointX="16.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicWage" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHiLite" Width="1.5" PointX="22.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHistory" Width="1.5" PointX="24.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotel" Width="1.5" PointX="29.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelKNT" Width="1.5" PointX="29.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelPackageD" Width="1.5" PointX="26.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelPackageR" Width="1.5" PointX="29.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelRoom" Width="1.5" PointX="18.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelSch" Width="1.5" PointX="31.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelTour" Width="1.5" PointX="31.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelTourD" Width="1.5" PointX="31.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelTourR" Width="1.5" PointX="31.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblImage" Width="1.5" PointX="31.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblInvoice" Width="1.5" PointX="19.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblInvoiceD" Width="1.5" PointX="22" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblLogin" Width="1.5" PointX="14.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblLoginAuth" Width="1.5" PointX="28.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblLoginGP" Width="1.5" PointX="14.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblLoginGS" Width="1.5" PointX="17" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblLoginGU" Width="1.5" PointX="17" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblLoginHis" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblLoginSec" Width="1.5" PointX="17" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblMember" Width="1.5" PointX="33.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblMemberBonus" Width="1.5" PointX="33.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblMemberD" Width="1.5" PointX="14.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblMemberDoc" Width="1.5" PointX="33.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblMemberHis" Width="1.5" PointX="33.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblMemOrder" Width="1.5" PointX="33.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblNews" Width="1.5" PointX="33.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblNewsCat" Width="1.5" PointX="30.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrder" Width="1.5" PointX="9.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderCash" Width="1.5" PointX="12" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderCus" Width="1.5" PointX="32.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderHis" Width="1.5" PointX="12" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderPaid" Width="1.5" PointX="12" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderPro" Width="1.5" PointX="12" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderProD" Width="1.5" PointX="12" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderTmp" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderVisa" Width="1.5" PointX="12" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProduct" Width="1.5" PointX="3" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductAir" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductAirSch" Width="1.5" PointX="20.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductCat" Width="1.5" PointX="0.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductCount" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductDetail" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductDoc" Width="1.5" PointX="34.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductFile" Width="1.5" PointX="35.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductHtl" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductHtlSch" Width="1.5" PointX="7.5" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductO" Width="1.5" PointX="35.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductOpt" Width="1.5" PointX="35.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductP" Width="1.5" PointX="35.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductPromo" Width="1.5" PointX="5.25" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSch" Width="1.5" PointX="5.25" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSchCar" Width="1.5" PointX="35.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSchD" Width="1.5" PointX="35.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSchM" Width="1.5" PointX="16.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSchOKA" Width="1.5" PointX="26.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSchT" Width="1.5" PointX="28.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSight" Width="1.5" PointX="7.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductTI" Width="1.5" PointX="5.25" PointY="49.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductUrl" Width="1.5" PointX="36.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductVisa" Width="1.5" PointX="5.25" PointY="54.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProfit" Width="1.5" PointX="36.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProfitD" Width="1.5" PointX="37.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProvider" Width="1.5" PointX="0.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProviderFile" Width="1.5" PointX="37.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblReproTBoss" Width="1.5" PointX="37.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSalesRec" Width="1.5" PointX="22.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSalesRecB" Width="1.5" PointX="37.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSalesRecH" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSalesRecL" Width="1.5" PointX="38.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSalesRecLG" Width="1.5" PointX="38.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSight" Width="1.5" PointX="17" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSightCat" Width="1.5" PointX="14.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSightImg" Width="1.5" PointX="38.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSightSeeing" Width="1.5" PointX="39.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourGuide" Width="1.5" PointX="39.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourGuideImg" Width="1.5" PointX="39.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTR30" Width="1.5" PointX="39.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTranH" Width="1.5" PointX="14.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTravelAgnt" Width="1.5" PointX="16.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblUUPON" Width="1.5" PointX="40.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAP80" Width="1.5" PointX="41.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAPCash" Width="1.5" PointX="41.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblAPPW" Width="1.5" PointX="41.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblMemberDDel" Width="1.5" PointX="34.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductExpo" Width="1.5" PointX="36.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductTI1" Width="1.5" PointX="7.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSightRev" Width="1.5" PointX="42.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourBook1" Width="1.5" PointX="42.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourBook1TI" Width="1.5" PointX="42.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourBook2" Width="1.5" PointX="42.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourBook2TI" Width="1.5" PointX="43.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourBook3" Width="1.5" PointX="43.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourBook3TI" Width="1.5" PointX="43.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTranD" Width="1.5" PointX="44.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblTravelOrder" Width="1.5" PointX="44.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.C_dta_mv_18" Width="1.5" PointX="44.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.C_dta_mv_40" Width="1.5" PointX="36.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_acc00r" Width="1.5" PointX="44.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_order00" Width="1.5" PointX="38.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_order00_1" Width="1.5" PointX="45.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_order00_cus" Width="1.5" PointX="45.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep_checks" Width="1.5" PointX="45.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep_checks_ck_new_20131024" Width="1.5" PointX="26.75" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep_checks_return" Width="1.5" PointX="28.75" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep_expense" Width="1.5" PointX="0.75" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep_income_fit" Width="1.5" PointX="46.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep_income_tour" Width="1.5" PointX="46.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep00" Width="1.5" PointX="46.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep01" Width="1.5" PointX="47.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep02_1" Width="1.5" PointX="47.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep02_2" Width="1.5" PointX="47.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep03" Width="1.5" PointX="47.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep04" Width="1.5" PointX="30.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_rep04_1" Width="1.5" PointX="32.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_repbosschecks" Width="1.5" PointX="44.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_sales00_02" Width="1.5" PointX="46.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_sales00_03" Width="1.5" PointX="7.75" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_sales00_04" Width="1.5" PointX="48.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_sales00_05" Width="1.5" PointX="22.75" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_sales00_06" Width="1.5" PointX="48.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_sales00_07" Width="1.5" PointX="34.75" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_sales00_08" Width="1.5" PointX="48.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.admin_tourtable" Width="1.5" PointX="48.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblDaieiMoney" Width="1.5" PointX="49.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblMngFile50" Width="1.5" PointX="49.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderCount" Width="1.5" PointX="49.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderDeposit" Width="1.5" PointX="14.75" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderDueDate" Width="1.5" PointX="16.75" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblSalesRec20" Width="1.5" PointX="0.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.tblUnionAP" Width="1.5" PointX="18.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_apollo2013_hottriplist" Width="1.5" PointX="50.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_apollo2013_index" Width="1.5" PointX="50.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_apollo2013_index_2" Width="1.5" PointX="24.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_country_promote" Width="1.5" PointX="26.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_country_suggest" Width="1.5" PointX="50.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_gp_index" Width="1.5" PointX="50.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_index_hottriplist" Width="1.5" PointX="40.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_index_hottriplist_New" Width="1.5" PointX="50.75" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_index_onsale" Width="1.5" PointX="50.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_kh_country_promote" Width="1.5" PointX="51.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_kh_country_suggest" Width="1.5" PointX="51.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_kh_country_suggest_new" Width="1.5" PointX="52.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_opt_list" Width="1.5" PointX="52.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_pchome_ad_promo" Width="1.5" PointX="52.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_pchome_suggested" Width="1.5" PointX="52.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_Repeater1" Width="1.5" PointX="52.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_Repeater2" Width="1.5" PointX="52.75" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_search_package_coun" Width="1.5" PointX="52.75" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_search_result" Width="1.5" PointX="53.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_search_result_browse" Width="1.5" PointX="53.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_search_result_promo" Width="1.5" PointX="9.75" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_subject" Width="1.5" PointX="11.75" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_subject_2013NY" Width="1.5" PointX="36.75" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_subject_casual" Width="1.5" PointX="42.75" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_subject_charter" Width="1.5" PointX="54.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_daily" Width="1.5" PointX="54.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_daily_browse" Width="1.5" PointX="54.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_daily_download" Width="1.5" PointX="38.75" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_dailyinfo" Width="1.5" PointX="54.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_info_air" Width="1.5" PointX="54.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_info_hotel" Width="1.5" PointX="54.75" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_list" Width="1.5" PointX="54.75" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_list_date" Width="1.5" PointX="16.75" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_order" Width="1.5" PointX="55.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_trip_order_complete" Width="1.5" PointX="18.75" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.v_txg_kh_promote" Width="1.5" PointX="55.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.view_ck_test_tidyup_tblap10" Width="1.5" PointX="24.75" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.view_ck_test_tidyup_tblap60" Width="1.5" PointX="56.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.view_ck_tidyup_tblsalesrec" Width="1.5" PointX="56.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.代轉套表專用" Width="1.5" PointX="57.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.錯誤的繳款單" Width="1.5" PointX="7.75" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.應收未收列表" Width="1.5" PointX="32.75" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.檢查請款單的總額" Width="1.5" PointX="57.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTS.Model.檢查繳款單的總額" Width="1.5" PointX="50.75" PointY="57.75" IsExpanded="true" />
+        <AssociationConnector Association="DTS.Model.FK_tblBusinessP_tblBusiness" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblBusinessP_tblProductSch" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblInvoiceD_tblInvoice" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblLoginGU_tblLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblLoginSec_tblLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblLoginGS_tblLoginGP" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblLoginGU_tblLoginGP" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblOrderCash_tblOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblOrderHis_tblOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblOrderPaid_tblOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblOrderPro_tblOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblOrderProD_tblOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblOrderVisa_tblOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_TBLPRODU_REFERENCE_TBLPRODU" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProduct_tblProductCat" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProduct_tblProvider" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductAir_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductDetail_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductHtl_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductHtlSch_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductPromo_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductSch_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductTI_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductVisa_tblProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductHtlSch_tblProductHtl" ManuallyRouted="false" />
+        <AssociationConnector Association="DTS.Model.FK_tblSight_tblSightCat" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductOptDetail" Width="1.5" PointX="53.375" PointY="57.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicAttraction" Width="1.5" PointX="12" PointY="62.875" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicImgGroup" Width="1.5" PointX="59.375" PointY="16.5" />
+        <EntityTypeShape EntityType="DTS.Model.tblDicImgItem" Width="1.5" PointX="61.625" PointY="15.875" />
+        <EntityTypeShape EntityType="DTS.Model.tblProAtt" Width="1.5" PointX="14.25" PointY="19.125" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductOptP" Width="1.5" PointX="59.625" PointY="42.125" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductOptS" Width="1.5" PointX="59.625" PointY="46.5" />
+        <EntityTypeShape EntityType="DTS.Model.tblProImg" Width="1.5" PointX="63.875" PointY="28" />
+        <AssociationConnector Association="DTS.Model.FK_tblProAtt_tblDicAttraction" />
+        <AssociationConnector Association="DTS.Model.FK_tblDicImgItem_tblDicImgGroup" />
+        <AssociationConnector Association="DTS.Model.FK_tblProImg_tblDicImgItem" />
+        <AssociationConnector Association="DTS.Model.FK_tblProAtt_tblProduct" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductOptP_tblProduct" />
+        <AssociationConnector Association="DTS.Model.FK_tblProImg_tblProduct" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductOptP_tblProductOptDetail" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductOptS_tblProductOptDetail" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductOptS_tblProductSch" />
+        <EntityTypeShape EntityType="DTS.Model.tblAttImg" Width="1.5" PointX="14.25" PointY="64.375" />
+        <AssociationConnector Association="DTS.Model.FK_tbleDicAttImg_tblDicAttraction" />
+        <AssociationConnector Association="DTS.Model.FK_tblDicAttraction_tblDicCity" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductDaily" Width="1.5" PointX="59.375" PointY="19.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductDailySight" Width="1.5" PointX="5.25" PointY="66" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductQA" Width="1.5" PointX="5.25" PointY="69.5" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSchDaily" Width="1.5" PointX="7.5" PointY="61.875" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSchDailySight" Width="1.5" PointX="9.75" PointY="65.5" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductSchQA" Width="1.5" PointX="7.5" PointY="23.125" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductDailySight_tblProductDaily" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductQA_tblProduct" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductSchDaily_tblProductSch" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductSchQA_tblProductSch" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductSchDailySight_tblProductSchDaily" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductDaily_tblProduct" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductDailySight_tblProductDaily1" />
+        <EntityTypeShape EntityType="DTS.Model.tblFBMember" Width="1.5" PointX="7.5" PointY="72.75" IsExpanded="true" />
+        <AssociationConnector Association="DTS.Model.tblFBOrder" />
+        <EntityTypeShape EntityType="DTS.Model.tblMailGroupDTS" Width="1.5" PointX="14.75" PointY="77.375" />
+        <EntityTypeShape EntityType="DTS.Model.tblMailGroupItemDTS" Width="1.5" PointX="17" PointY="0.75" />
+        <AssociationConnector Association="DTS.Model.FK_tblHotelPackageD_tblHotel" />
+        <AssociationConnector Association="DTS.Model.FK_tblMailGroupItemDTS_tblLogin" />
+        <AssociationConnector Association="DTS.Model.FK_tblMailGroupItemDTS_tblMailGroupDTS" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelPackageCus" Width="1.5" PointX="0.75" PointY="42.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelPackage" Width="1.5" PointX="32" PointY="62.375" />
+        <AssociationConnector Association="DTS.Model.FK_tblHotelPackage_tblHotel" />
+        <EntityTypeShape EntityType="DTS.Model.tblCar" Width="1.5" PointX="61.625" PointY="59.375" />
+        <EntityTypeShape EntityType="DTS.Model.tblCarPackage" Width="1.5" PointX="63.875" PointY="62.5" />
+        <EntityTypeShape EntityType="DTS.Model.tblCarPackageD" Width="1.5" PointX="63.875" PointY="56.375" />
+        <EntityTypeShape EntityType="DTS.Model.tblCarPackageDShuttle" Width="1.5" PointX="14.25" PointY="78.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblCoupon" Width="1.5" PointX="0.75" PointY="32.25" />
+        <EntityTypeShape EntityType="DTS.Model.tblCouponTable" Width="1.5" PointX="41.25" PointY="47.375" />
+        <AssociationConnector Association="DTS.Model.FK_tblCarPackage_tblCar" />
+        <AssociationConnector Association="DTS.Model.FK_tblCarPackageD_tblCar" />
+        <AssociationConnector Association="DTS.Model.FK_tblCarPackageDShuttle_tblOrder" />
+        <AssociationConnector Association="DTS.Model.FK_tblCouponTable_tblCouponTable" />
+        <AssociationConnector Association="DTS.Model.FK_tblCouponTable_tblOrder" />
+        <AssociationConnector Association="DTS.Model.tblCouOrd" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderOPRECPAY" Width="1.5" PointX="59.375" PointY="30.75" />
+        <AssociationConnector Association="DTS.Model.tblOptCou" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderOPRECPAYBack" Width="1.5" PointX="35.375" PointY="59.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderOPRCC" Width="1.5" PointX="59.375" PointY="34.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblOrderOPR" Width="1.5" PointX="21.375" PointY="58.75" />
+        <AssociationConnector Association="DTS.Model.FK_tblOrderCus_tblOrder" />
+        <AssociationConnector Association="DTS.Model.FK_tblSalesRec_tblOrder" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourList" Width="1.5" PointX="41.375" PointY="59.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblTourListTI" Width="1.5" PointX="59.375" PointY="49.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblArticle" Width="1.5" PointX="64.25" PointY="14.5" />
+        <EntityTypeShape EntityType="DTS.Model.tblEditor" Width="1.5" PointX="60" PointY="5.875" />
+        <EntityTypeShape EntityType="DTS.Model.tblHotelC" Width="1.5" PointX="60.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblHugtag" Width="1.5" PointX="66.5" PointY="16.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblSource" Width="1.5" PointX="57.75" PointY="62.625" />
+        <EntityTypeShape EntityType="DTS.Model.tblSystemConfig" Width="1.5" PointX="23.375" PointY="45.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblTheIma" Width="1.5" PointX="39" PointY="41.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblTheme" Width="1.5" PointX="57.75" PointY="66" />
+        <EntityTypeShape EntityType="DTS.Model.tblTopic" Width="1.5" PointX="60" PointY="10.875" />
+        <AssociationConnector Association="DTS.Model.FK_tblArticle_tblEditor" />
+        <AssociationConnector Association="DTS.Model.FK_tblArticle_tblImageMobile" />
+        <AssociationConnector Association="DTS.Model.FK_tblArticle_tblImagePC" />
+        <AssociationConnector Association="DTS.Model.FK_tblArticle_tblImageSnap" />
+        <AssociationConnector Association="DTS.Model.FK_tblArticle_tblTheme" />
+        <AssociationConnector Association="DTS.Model.FK_tblArticle_tblTopic" />
+        <AssociationConnector Association="DTS.Model.FK_tblEditor_tblImage" />
+        <AssociationConnector Association="DTS.Model.FK_tblEditor_tblSource" />
+        <AssociationConnector Association="DTS.Model.FK_tblTheIma_tblImage" />
+        <AssociationConnector Association="DTS.Model.FK_tblTopic_tblImage" />
+        <AssociationConnector Association="DTS.Model.FK_tblTheIma_tblTheme" />
+        <AssociationConnector Association="DTS.Model.FK_tblTopic_tblTheme" />
+        <AssociationConnector Association="DTS.Model.tblArtHug" />
+        <EntityTypeShape EntityType="DTS.Model.tblActivity" Width="1.5" PointX="0.75" PointY="60.75" />
+        <EntityTypeShape EntityType="DTS.Model.tblFITPackageItemLog" Width="1.5" PointX="59.375" PointY="38.75" />
+        <AssociationConnector Association="DTS.Model.FK_tblHotelC_tblHotel" />
+        <EntityTypeShape EntityType="DTS.Model.tblFITMember" Width="1.5" PointX="23.375" PointY="63.375" />
+        <EntityTypeShape EntityType="DTS.Model.tblFITOrder" Width="1.5" PointX="25.625" PointY="63.25" />
+        <EntityTypeShape EntityType="DTS.Model.tblFITOrderItem" Width="1.5" PointX="27.875" PointY="67.875" />
+        <EntityTypeShape EntityType="DTS.Model.tblFITOrderPaid" Width="1.5" PointX="27.875" PointY="63.875" />
+        <EntityTypeShape EntityType="DTS.Model.tblFITPackage" Width="1.5" PointX="23.375" PointY="68.5" />
+        <EntityTypeShape EntityType="DTS.Model.tblFITPackageItem" Width="1.5" PointX="25.625" PointY="68.125" />
+        <AssociationConnector Association="DTS.Model.FK_tblFITOrder_tblFITMember" />
+        <AssociationConnector Association="DTS.Model.FK_tblFITOrderItem_tblFITOrder" />
+        <AssociationConnector Association="DTS.Model.FK_tblFITOrderPaid_tblFITOrder" />
+        <AssociationConnector Association="DTS.Model.FK_tblFITOrderItem_tblFITPackageItem" />
+        <AssociationConnector Association="DTS.Model.FK_tblFITPackageItem_tblFITPackage" />
+        <EntityTypeShape EntityType="DTS.Model.tblFITOrderCus" Width="1.5" PointX="30.125" PointY="68" />
+        <AssociationConnector Association="DTS.Model.FK_tblFITOrderCus_tblFITOrderItem" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductDailyCW" Width="1.5" PointX="62.375" PointY="1.375" />
+        <EntityTypeShape EntityType="DTS.Model.tblProductDailySightCW" Width="1.5" PointX="64.625" PointY="4.875" />
+        <AssociationConnector Association="DTS.Model.FK_tblProductDailySightCW_tblProductDailyCW" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
